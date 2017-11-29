@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "wc:snow_man_head" },
+        "facing=south": { "model": "wc:snow_man_head", "y": 180 },
+        "facing=west":  { "model": "wc:snow_man_head", "y": 270 },
+        "facing=east":  { "model": "wc:snow_man_head", "y": 90 }
+    }
+}

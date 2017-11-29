@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_top",
+	"textures": {
+        "top": "wc:blocks/gift_top",
+        "side": "wc:blocks/gift_side"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_top",
+	"textures": {
+        "top": "wc:blocks/winter_spawner_top",
+		"bottom": "wc:blocks/winter_spawner",
+        "side": "wc:blocks/winter_spawner_side"
+    }
+}

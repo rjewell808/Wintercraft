@@ -1,0 +1,64 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "textures": {
+		"0": "wc:blocks/ornament/orn_red",
+        "1": "wc:blocks/ornament/orn_neck_side",
+        "2": "wc:blocks/ornament/orn_neck_top",
+        "3": "wc:blocks/ornament/orn_hook",
+		"particle": "#0"
+    },
+    "elements": [
+        {
+            "name": "Base",
+            "from": [ 6.0, 9.0, 6.0 ], 
+            "to": [ 11.0, 14.0, 11.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 11.0, 5.0, 16.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 11.0, 5.0, 16.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 11.0, 5.0, 16.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 11.0, 5.0, 16.0 ] },
+                "up": { "texture": "#0", "uv": [ 0.0, 6.0, 5.0, 11.0 ] },
+                "down": { "texture": "#0", "uv": [ 5.0, 6.0, 10.0, 11.0 ] }
+            }
+        },
+        {
+            "name": "Neck",
+            "from": [ 7.0, 14.0, 7.0 ], 
+            "to": [ 10.0, 15.0, 10.0 ], 
+            "faces": {
+                "north": { "texture": "#1", "uv": [ 1.0, 0.0, 4.0, 1.0 ] },
+                "east": { "texture": "#1", "uv": [ 3.0, 0.0, 0.0, 1.0 ] },
+                "south": { "texture": "#1", "uv": [ 1.0, 0.0, 4.0, 1.0 ] },
+                "west": { "texture": "#1", "uv": [ 0.0, 0.0, 3.0, 1.0 ] },
+                "up": { "texture": "#2", "uv": [ 0.0, 0.0, 3.0, 3.0 ] },
+                "down": { "texture": "#2", "uv": [ 0.0, 0.0, 3.0, 3.0 ] }
+            }
+        },
+        {
+            "name": "HookNeck",
+            "from": [ 8.0, 15.0, 8.0 ], 
+            "to": [ 9.0, 16.0, 9.0 ], 
+            "faces": {
+                "north": { "texture": "#3", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "east": { "texture": "#3", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "south": { "texture": "#3", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "west": { "texture": "#3", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "up": { "texture": "#3", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "down": { "texture": "#3", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+            }
+        },
+        {
+            "name": "HookTop",
+            "from": [ 7.0, 16.0, 8.0 ], 
+            "to": [ 9.0, 17.0, 9.0 ], 
+            "faces": {
+                "north": { "texture": "#3", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "east": { "texture": "#3", "uv": [ 0.0, 1.0, 2.0, 0.0 ] },
+                "south": { "texture": "#3", "uv": [ 0.0, 0.0, 3.0, 1.0 ] },
+                "west": { "texture": "#3", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+                "up": { "texture": "#3", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+                "down": { "texture": "#3", "uv": [ 0.0, 0.0, 2.0, 1.0 ] }
+            }
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "wc:block/ornament_block",
+	"textures": {
+		"particle": "wc:blocks/ornament/orn_lime",
+		"0": "wc:blocks/ornament/orn_lime"
+	}
+}

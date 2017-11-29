@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "color=red": {"model": "wc:ornament_red"},
+		"color=green": {"model": "wc:ornament_green"},
+		"color=blue": {"model": "wc:ornament_blue"},
+		"color=brown": {"model": "wc:ornament_brown"},
+		"color=cyan": {"model": "wc:ornament_cyan"},
+		"color=gray": {"model": "wc:ornament_dkgray"},
+		"color=black": {"model": "wc:ornament_black"},
+		"color=lime": {"model": "wc:ornament_lime"},
+		"color=light_blue": {"model": "wc:ornament_ltblue"},
+		"color=silver": {"model": "wc:ornament_ltgray"},
+		"color=magenta": {"model": "wc:ornament_magenta"},
+		"color=orange": {"model": "wc:ornament_orange"},
+		"color=pink": {"model": "wc:ornament_pink"},
+		"color=purple": {"model": "wc:ornament_purple"},
+		"color=white": {"model": "wc:ornament_white"},
+		"color=yellow": {"model": "wc:ornament_yellow"}
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "variants": {
+		"color=white": {"model": "wc:ornament_rare_creeper"},
+		"color=orange": {"model": "wc:ornament_rare_enderman"},
+		"color=magenta": {"model": "wc:ornament_rare_blaze"}
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom,variant=false": { "model": "wc:snow_slab_half" },
+        "half=top,variant=false":  { "model": "wc:snow_slab_upper" }
+    }
+}

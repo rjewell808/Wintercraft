@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_top",
+	"textures": {
+        "top": "wc:blocks/present_top",
+        "side": "wc:blocks/present_side"
+    }
+}

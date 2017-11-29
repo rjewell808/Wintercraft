@@ -1,0 +1,7 @@
+{
+    "parent": "wc:block/candle_block",
+	"textures": {
+		"particle": "blocks/hardened_clay_stained_green",
+		"0": "blocks/hardened_clay_stained_green"
+	}
+}

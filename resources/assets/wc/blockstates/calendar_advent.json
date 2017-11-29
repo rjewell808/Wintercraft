@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "wc:calendar_advent" },
+        "facing=east":  { "model": "wc:calendar_advent", "y": 90 },
+        "facing=south": { "model": "wc:calendar_advent", "y": 180 },
+        "facing=west":  { "model": "wc:calendar_advent", "y": 270 }
+    }
+}

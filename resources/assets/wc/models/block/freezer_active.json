@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "wc:blocks/freezer_top",
+		"bottom": "wc:blocks/freezer_bottom",
+        "front": "wc:blocks/freezer_front_active",
+        "side": "wc:blocks/freezer_side"
+    }
+}

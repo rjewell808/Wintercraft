@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "wc:stocking" },
+        "facing=east":  { "model": "wc:stocking", "y": 90 },
+        "facing=south": { "model": "wc:stocking", "y": 180 },
+        "facing=west":  { "model": "wc:stocking", "y": 270 }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "color=red": {"model": "wc:candle_red"},
+		"color=green": {"model": "wc:candle_green"},
+		"color=blue": {"model": "wc:candle_blue"},
+		"color=brown": {"model": "wc:candle_brown"},
+		"color=cyan": {"model": "wc:candle_cyan"},
+		"color=gray": {"model": "wc:candle_dkgray"},
+		"color=black": {"model": "wc:candle_black"},
+		"color=lime": {"model": "wc:candle_lime"},
+		"color=light_blue": {"model": "wc:candle_ltblue"},
+		"color=silver": {"model": "wc:candle_ltgray"},
+		"color=magenta": {"model": "wc:candle_magenta"},
+		"color=orange": {"model": "wc:candle_orange"},
+		"color=pink": {"model": "wc:candle_pink"},
+		"color=purple": {"model": "wc:candle_purple"},
+		"color=white": {"model": "wc:candle_white"},
+		"color=yellow": {"model": "wc:candle_yellow"}
+    }
+}

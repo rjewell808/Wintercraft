@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "wc:wreath" },
+        "facing=east":  { "model": "wc:wreath", "y": 90 },
+        "facing=south": { "model": "wc:wreath", "y": 180 },
+        "facing=west":  { "model": "wc:wreath", "y": 270 }
+    }
+}
