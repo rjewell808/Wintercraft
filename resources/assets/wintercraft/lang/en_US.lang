@@ -1,0 +1,221 @@
+itemGroup.Wintercraft=Wintercraft
+
+achievement.iceShard=Ice Breaker
+achievement.iceShard.desc=Collect an Ice Shard
+
+achievement.iceChunk=Ice Constructor
+achievement.iceChunk.desc=Craft an Ice Chunk
+
+achievement.iceGem=Ice Mage
+achievement.iceGem.desc=Craft an Ice Gem
+
+achievement.icedStone=Ice on Rock
+achievement.icedStone.desc=Freeze some stone
+
+achievement.iceIngot=Ice on Ingot
+achievement.iceIngot.desc=Freeze an Iron Ingot
+
+achievement.iceCrystal=Ice on Gem
+achievement.iceCrystal.desc=Freeze a Diamond
+
+achievement.iceStaff=Magic on a Stick!
+achievement.iceStaff.desc=Use an Ice Staff
+
+achievement.iceStaffBad=Explosion on a Stick!
+achievement.iceStaffBad.desc=~Mystery~
+
+achievement.snowGlobe=Magic in a Globe
+achievement.snowGlobe.desc=Use a Snow Globe
+
+achievement.snowGlobeBad=Naughty Weather!
+achievement.snowGlobeBad.desc=~Mystery~
+
+achievement.ornament=Decorating Time!
+achievement.ornament.desc=Craft an Ornament
+
+achievement.santa=Like Christmas Morning!
+achievement.santa.desc=Get a Visit from Santa
+
+achievement.christmas=Merry Christmas!
+achievement.christmas.desc=~Mystery~
+
+achievement.iceChiller=Magic on Fire!
+achievement.iceChiller.desc=Craft an Ice Chiller
+
+achievement.star=The Star on Top
+achievement.star.desc=Create a Christmas Tree
+
+achievement.rareOrnament=Special Decor
+achievement.rareOrnament.desc=Find a rare Ornament
+
+achievement.freezer=Cold Topic
+achievement.freezer.desc=Craft a Freezer
+
+tile.winterIce.name=Winter Ice
+tile.star.name=Star
+tile.candleItem.whiteCandle.name=White Candle
+tile.candleItem.redCandle.name=Red Candle
+tile.candleItem.greenCandle.name=Green Candle
+tile.candleItem.brownCandle.name=Brown Candle
+tile.candleItem.blueCandle.name=Blue Candle
+tile.candleItem.purpleCandle.name=Purple Candle
+tile.candleItem.cyanCandle.name=Cyan Candle
+tile.candleItem.lightGrayCandle.name=Light Gray Candle
+tile.candleItem.darkGrayCandle.name=Dark Gray Candle
+tile.candleItem.pinkCandle.name=Pink Candle
+tile.candleItem.limeCandle.name=Lime Candle
+tile.candleItem.yellowCandle.name=Yellow Candle
+tile.candleItem.lightBlueCandle.name=Light Blue Candle
+tile.candleItem.magentaCandle.name=Magenta Candle
+tile.candleItem.orangeCandle.name=Orange Candle
+tile.candleItem.blackCandle.name=Black Candle
+tile.christmasPresent.name=Christmas Present
+tile.present.name=Present
+tile.icedStone.name=Iced Stone
+tile.snowBricks.name=Snow Bricks
+tile.snowStairs.name=Snow Stairs
+tile.magicFire.name=Magic Frost
+tile.magicPortal.name=North Pol-tal
+tile.magicSnow.name=Magic Snow
+tile.fruitCakeBricks.name=Fruit Cake Bricks
+tile.fruitCake.name=Fruit Cake Block
+tile.lightsBlock.name=Lights Block
+tile.freezer.name=Freezer
+tile.wreath.name=Wreath
+tile.stockingFull.name=Full Stocking
+tile.stocking.name=Stocking
+tile.ornamentItem.RedOrnament.name=Red Ornament
+tile.ornamentItem.GreenOrnament.name=Green Ornament
+tile.ornamentItem.BlueOrnament.name=Blue Ornament
+tile.snowManHead.name=Snow Man Head
+tile.gift.name=Gift Box
+tile.candyCaneBlock.name=Candy Cane Log
+tile.calendar.name=Countdown Calendar
+tile.adventCalendar.name=Advent Calendar
+tile.darkPresent.name=Dark Present
+tile.snowGlobeBlock.name=Snow Globe
+tile.fireplace.name=Fireplace
+tile.icedCobble.name=Iced Cobble
+tile.wallLights.name=Wall Lights Block
+
+item.candyCane.name=Candy Cane
+item.iceChunk.name=Ice Chunk
+item.snowGlobe.name=Snow Globe
+item.iceShard.name=Ice Shard
+item.iceCrystal.name=Ice Crystal
+item.iceIngot.name=Ice Ingot
+item.chillerStick.name=Chiller Staff
+item.iceStaff.name=Ice Staff
+item.iceBall.name=Ice Ball
+item.iceGem.0.name=§4§lUNSTABLE§r Ice-Gem
+item.iceGem.1.name=Ice-Gem
+item.commonItem.0.name=Mug
+item.commonItem.1.name=Vanilla Ice-cream
+item.commonItem.2.name=Chocolate Ice-cream
+item.commonItem.3.name=Strawberry Ice-cream
+item.commonItem.4.name=Cookie Dough Ice-cream
+item.commonItem.5.name=Iced Magma Cream
+item.commonItem.6.name=Waffle Cone
+item.commonItem.7.name=Polar Bear Fur
+item.commonItem.8.name=Red Polar Bear Fur
+item.commonItem.9.name=Iron Rod
+item.eggNog.name=Egg Nog
+item.gingerbreadMan.name=Gingerbread Man
+item.marshmellow2.name=Marshmallows
+item.fruitCake.name=Fruit Cake
+item.coffee.name=Hot Chocolate
+item.rockySnowball2.name=Rocky Snowball
+item.chisIcePickaxe.name=Chiseled-Ice Pickaxe
+item.chisIceAxe.name=Chiseled-Ice Axe
+item.chisIceShovel.name=Chiseled-Ice Shovel
+item.chisIceHoe.name=Chiseled-Ice Hoe
+item.chisIceSword.name=Chiseled-Ice Sword
+item.refIcePickaxe.name=Refined-Ice Pickaxe
+item.refIceAxe.name=Refined-Ice Axe
+item.refIceShovel.name=Refined-Ice Shovel
+item.refIceHoe.name=Refined-Ice Hoe
+item.refIceSword.name=Refined-Ice Sword
+item.crystalSword.name=Crystal-Ice Sword
+item.crystalPickaxe.name=Crystal-Ice Pickaxe
+item.crystalAxe.name=Crystal-Ice Axe
+item.crystalShovel.name=Crystal-Ice Shovel
+item.crystalHoe.name=Crystal-Ice Hoe
+item.crystalSword.name=Crystal-Ice Sword
+item.candyCaneSword.name=Candy Cane Sword
+item.coffeeMix.name=Chocolate Milk
+item.decorDoorItem.name=Decor Door
+item.lights.name=Christmas Lights
+item.iceShardSword.name=Shard Sword
+item.magmaCone.name=Iced Magma Cream Cone
+item.chocolateCone.name=Chocolate Cone
+item.strawberryCone.name=Strawberry Cone
+item.cookieCone.name=Cookie Dough Cone
+item.vanillaCone.name=Vanilla Cone
+item.christmasCookie.name=Christmas Cookie
+item.santaHat.name=Santa Hat
+item.santaSuit.name=Santa Suit
+item.santaPants.name=Santa Pants
+item.santaBoots.name=Santa Boots
+item.crystalHelmet.name=Crystal-Ice Helmet
+item.crystalPlate.name=Crystal-Ice Chestplate
+item.crystalLegs.name=Crystal-Ice Leggings
+item.crystalBoots.name=Crystal-Ice Boots
+item.refHelmet.name=Refined-Ice Helmet
+item.refPlate.name=Refined-Ice Chestplate
+item.refLegs.name=Refined-Ice Leggings
+item.refBoots.name=Refined-Ice Boots
+item.magicSaddle.name=Magic Saddle
+item.deckTheHalls.name=Deck The Halls
+item.jingleBells.name=Jingle Bells
+item.candleItem.0.name=White Candle
+item.candleItem.1.name=Red Candle
+item.candleItem.2.name=Green Candle
+item.candleItem.3.name=Brown Candle
+item.candleItem.4.name=Blue Candle
+item.candleItem.5.name=Purple Candle
+item.candleItem.6.name=Cyan Candle
+item.candleItem.7.name=Light Gray Candle
+item.candleItem.8.name=Dark Gray Candle
+item.candleItem.9.name=Pink Candle
+item.candleItem.10.name=Lime Candle
+item.candleItem.11.name=Yellow Candle
+item.candleItem.12.name=Light Blue Candle
+item.candleItem.13.name=Magenta Candle
+item.candleItem.14.name=Orange Candle
+item.candleItem.15.name=Black Candle
+item.ornamentItem.15.name=White Ornament
+item.ornamentItem.0.name=Red Ornament
+item.ornamentItem.1.name=Green Ornament
+item.ornamentItem.5.name=Brown Ornament
+item.ornamentItem.2.name=Blue Ornament
+item.ornamentItem.6.name=Purple Ornament
+item.ornamentItem.7.name=Cyan Ornament
+item.ornamentItem.8.name=Light Gray Ornament
+item.ornamentItem.9.name=Dark Gray Ornament
+item.ornamentItem.10.name=Pink Ornament
+item.ornamentItem.11.name=Lime Ornament
+item.ornamentItem.12.name=Yellow Ornament
+item.ornamentItem.13.name=Light Blue Ornament
+item.ornamentItem.14.name=Magenta Ornament
+item.ornamentItem.3.name=Orange Ornament
+item.ornamentItem.4.name=Black Ornament
+item.ornamentRareItem.0.name=Creeper Ornament
+item.ornamentRareItem.1.name=Enderman Ornament
+item.ornamentRareItem.2.name=Blaze Ornament
+item.venisonRaw.name=Raw Venison
+item.venisonCooked.name=Cooked Venison
+item.candyCaneAxe.name=Candy Cane Axe
+item.iceSkates.name=Ice Skates
+item.antlers.name=Antlers
+
+item.record.wintercraft:deckTheHalls.desc=Kevin MacLeod - Deck The Halls
+item.record.wintercraft:jingleBells.desc=Kevin MacLeod - Jingle Bells
+
+SnowSlab.name=Snow Slab
+
+item.customSpawner.name=Spawn
+
+entity.GingerBreadMan.name=Gingerbread Man
+entity.MiniSnowGolem.name=Mini Snow Golem
+entity.UsefulSnowMan.name=Snow Man
+entity.albinoReindeer.name=Albino Reindeer
