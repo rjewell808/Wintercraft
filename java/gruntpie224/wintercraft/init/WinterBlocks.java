@@ -67,33 +67,33 @@ public class WinterBlocks {
 	{
 		// [1.8] 32 / 33 Blocks Updated
 		
-		star = new BlockStar(Material.glass).setHardness(0.8F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("star");	
-		iced_stone = new BlockBaseBlock(Material.rock).setHardness(1.3F).setStepSound(Block.soundTypeStone).setUnlocalizedName("iced_stone");
-		snow_bricks = new BlockBaseBlock(Material.rock).setHardness(1.3F).setStepSound(Block.soundTypeSnow).setUnlocalizedName("snow_bricks");
-		snow_stairs = new BlockSnowStairs(Blocks.snow).setUnlocalizedName("snow_stairs");	
-		fruit_bricks = new BlockBaseBlock(Material.rock).setHardness(2.5F).setStepSound(Block.soundTypeStone).setUnlocalizedName("fruit_bricks");	
-		lights_block = new BlockLightsBlock(Material.leaves).setHardness(0.6F).setLightLevel(0.7F).setStepSound(Block.soundTypeGrass).setUnlocalizedName("lights_block");
+		star = new BlockStar(Material.GLASS).setHardness(0.8F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("star");	
+		iced_stone = new BlockBaseBlock(Material.ROCK).setHardness(1.3F).setStepSound(Block.soundTypeStone).setUnlocalizedName("iced_stone");
+		snow_bricks = new BlockBaseBlock(Material.ROCK).setHardness(1.3F).setStepSound(Block.soundTypeSnow).setUnlocalizedName("snow_bricks");
+		snow_stairs = new BlockSnowStairs(Blocks.SNOW).setUnlocalizedName("snow_stairs");	
+		fruit_bricks = new BlockBaseBlock(Material.ROCK).setHardness(2.5F).setStepSound(Block.soundTypeStone).setUnlocalizedName("fruit_bricks");	
+		lights_block = new BlockLightsBlock(Material.LEAVES).setHardness(0.6F).setLightLevel(0.7F).setStepSound(Block.soundTypeGrass).setUnlocalizedName("lights_block");
 		freezer = new BlockFreezer(false).setHardness(2.5F).setStepSound(Block.soundTypeGlass).setCreativeTab(Wintercraft.wintercraftTab).setUnlocalizedName("freezer");
 		freezerActive = new BlockFreezer(true).setHardness(2.5F).setLightLevel(0.8F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("freezer");
 		wreath = new BlockWallBlock().setHardness(0.3F).setStepSound(Block.soundTypeGrass).setUnlocalizedName("wreath");
 		stocking = new BlockWallBlock().setHardness(0.2F).setStepSound(Block.soundTypeCloth).setUnlocalizedName("stocking");	
 		stocking_full = new BlockWallBlock().setHardness(0.2F).setStepSound(Block.soundTypeCloth).setUnlocalizedName("stocking_full");	
-		snow_man_head = new BlockSnowManHead(1, Material.ground).setHardness(0.2F).setStepSound(Block.soundTypeSnow).setUnlocalizedName("snow_man_head");
+		snow_man_head = new BlockSnowManHead(1, Material.GROUND).setHardness(0.2F).setStepSound(Block.soundTypeSnow).setUnlocalizedName("snow_man_head");
 		miniGolemSpawner = new BlockWinterSpawner("MiniSnowGolem").setHardness(5.5F).setStepSound(Block.soundTypeMetal).setUnlocalizedName("winter_spawner");						
-		gift = new BlockGift(Material.cloth).setHardness(0.2F).setStepSound(Block.soundTypeCloth).setUnlocalizedName("gift");	
+		gift = new BlockGift(Material.CLOTH).setHardness(0.2F).setStepSound(Block.soundTypeCloth).setUnlocalizedName("gift");	
 		snow_slab_single = new BlockSnowSlabHalf().setHardness(0.5F).setResistance(7.5F).setStepSound(Block.soundTypeSnow).setUnlocalizedName("snow_slab_single");		
 		snow_slab_double = new BlockSnowSlabFull().setHardness(0.6F).setResistance(7.5F).setStepSound(Block.soundTypeSnow).setUnlocalizedName("snow_slab_double");
 		calendar = new BlockCalendar().setHardness(0.3F).setStepSound(Block.soundTypeGrass).setUnlocalizedName("calendar");
-		candy_cane_block = new BlockCandyCane(Material.wood).setHardness(1.5F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("candy_cane_block");
+		candy_cane_block = new BlockCandyCane(Material.WOOD).setHardness(1.5F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("candy_cane_block");
 		calendar_advent = new BlockAdventCalendar().setHardness(0.3F).setStepSound(Block.soundTypeGrass).setUnlocalizedName("calendar_advent");
-		dark_present = new BlockDarkPresent(Material.cloth).setHardness(0.2F).setStepSound(Block.soundTypeCloth).setUnlocalizedName("dark_present");
-		snow_globe = new BlockSnowGlobeBlock(Material.glass,false).setHardness(0.5F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("snow_globe");
-		snow_globe_corrupt = new BlockSnowGlobeBlock(Material.glass,true).setHardness(0.5F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("snow_globe");
-		fireplace = new BlockFirePlace(Material.wood,false).setHardness(2.5F).setStepSound(Block.soundTypeWood).setUnlocalizedName("fireplace").setCreativeTab(Wintercraft.wintercraftTab);
-		fireplace_active = new BlockFirePlace(Material.wood,true).setHardness(2.5F).setLightLevel(1.0F).setStepSound(Block.soundTypeWood).setUnlocalizedName("fireplace");
-		iced_cobble = new BlockBaseBlock(Material.rock).setHardness(1.1F).setStepSound(Block.soundTypeStone).setUnlocalizedName("iced_cobble");
-		winter_present = new BlockChristmasPresent(Material.cloth).setHardness(0.2F).setStepSound(Block.soundTypeCloth).setUnlocalizedName("winter_present");
-		present = new BlockPresent(Material.cloth).setHardness(0.2F).setStepSound(Block.soundTypeCloth).setUnlocalizedName("present");
+		dark_present = new BlockDarkPresent(Material.CLOTH).setHardness(0.2F).setStepSound(Block.soundTypeCloth).setUnlocalizedName("dark_present");
+		snow_globe = new BlockSnowGlobeBlock(Material.GLASS,false).setHardness(0.5F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("snow_globe");
+		snow_globe_corrupt = new BlockSnowGlobeBlock(Material.GLASS,true).setHardness(0.5F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("snow_globe");
+		fireplace = new BlockFirePlace(Material.WOOD,false).setHardness(2.5F).setStepSound(Block.soundTypeWood).setUnlocalizedName("fireplace").setCreativeTab(Wintercraft.wintercraftTab);
+		fireplace_active = new BlockFirePlace(Material.WOOD,true).setHardness(2.5F).setLightLevel(1.0F).setStepSound(Block.soundTypeWood).setUnlocalizedName("fireplace");
+		iced_cobble = new BlockBaseBlock(Material.ROCK).setHardness(1.1F).setStepSound(Block.soundTypeStone).setUnlocalizedName("iced_cobble");
+		winter_present = new BlockChristmasPresent(Material.CLOTH).setHardness(0.2F).setStepSound(Block.soundTypeCloth).setUnlocalizedName("winter_present");
+		present = new BlockPresent(Material.CLOTH).setHardness(0.2F).setStepSound(Block.soundTypeCloth).setUnlocalizedName("present");
 		
 		
 		GameRegistry.registerBlock(star, "star");

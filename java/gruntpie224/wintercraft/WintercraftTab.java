@@ -3,6 +3,7 @@ package gruntpie224.wintercraft;
 import gruntpie224.wintercraft.init.WinterBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class WintercraftTab extends CreativeTabs{
 
@@ -11,8 +12,8 @@ public class WintercraftTab extends CreativeTabs{
 	}
 
 	@Override
-	public Item getTabIconItem() {
-		return Item.getItemFromBlock(WinterBlocks.iced_stone);
+	public ItemStack getTabIconItem() {
+		return new ItemStack(Item.getItemFromBlock(WinterBlocks.iced_stone));
 	}
 	
 }
