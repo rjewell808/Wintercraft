@@ -4,15 +4,17 @@ import java.util.ArrayList;
 
 import gruntpie224.wintercraft.blocks.BlockBasic;
 import gruntpie224.wintercraft.blocks.BlockSnowSlab;
-import gruntpie224.wintercraft.blocks.BlockSnowSlabDouble;
 import gruntpie224.wintercraft.blocks.BlockSnowStairs;
 import gruntpie224.wintercraft.blocks.SlabBasic;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemSlab;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -34,10 +36,10 @@ public class WinterBlocks {
 	public static Block snow_stairs;
 	
 	@GameRegistry.ObjectHolder("wc:snow_slab_single")
-	public static Block snow_slab_single;
+	public static BlockSnowSlab snow_slab_single;
 	
 	@GameRegistry.ObjectHolder("wc:snow_slab_double")
-	public static Block snow_slab_double;
+	public static BlockSnowSlab snow_slab_double;
 	
 	public static void initBlocks()
 	{
@@ -53,17 +55,20 @@ public class WinterBlocks {
 		snow_stairs = new BlockSnowStairs("snow_stairs", Blocks.SNOW.getBlockState().getBaseState());
 		all_blocks.add(snow_stairs);
 		
-		snow_slab_single = new BlockSnowSlab("snow_slab_single");
-		all_blocks.add(snow_slab_single);
+		snow_slab_single = new BlockSnowSlab.Half("snow_slab_single", Material.SNOW);
+		//all_blocks.add(snow_slab_single);
 		
-		snow_slab_double = new BlockSnowSlabDouble("snow_slab_double");
-		all_blocks.add(snow_slab_double);
+		snow_slab_double = new BlockSnowSlab.Double("snow_slab_double", Material.SNOW);
+		//all_blocks.add(snow_slab_double);
 	}
 	
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
 	{
 		for(Block block : all_blocks)
 			event.getRegistry().register(block);
+		
+		event.getRegistry().register(snow_slab_single);
+		event.getRegistry().register(snow_slab_double);
 	}
 	
 	public static void registerBlockItems(RegistryEvent.Register<Item> event)
@@ -71,6 +76,7 @@ public class WinterBlocks {
 		for(Block block : all_blocks)
 			event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
 		
+		event.getRegistry().register(new ItemSlab(snow_slab_single, snow_slab_single, snow_slab_double).setRegistryName(snow_slab_single.getRegistryName()));
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -78,13 +84,16 @@ public class WinterBlocks {
 	{
 		for(Block block : all_blocks)
 			try{
-			((BlockBasic) block).initModel();
+				((BlockBasic) block).initModel();
 			} catch (Exception e){
 				
 			}
 		
 		((BlockSnowStairs)snow_stairs).initModel();
-		((SlabBasic)snow_slab_single).initModel();
-		((SlabBasic)snow_slab_double).initModel();
+		registerRender(Item.getItemFromBlock(snow_slab_single));
+	}
+	
+	public static void registerRender(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation( item.getRegistryName(), "inventory"));
 	}
 }

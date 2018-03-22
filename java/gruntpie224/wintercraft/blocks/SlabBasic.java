@@ -24,6 +24,7 @@ public class SlabBasic extends BlockSlab{
 		this.setRegistryName(name);
 		this.setUnlocalizedName(name);
 		this.setCreativeTab(Wintercraft.wcTab);
+		this.useNeighborBrightness = true;
 	}
 	
 	@Override
