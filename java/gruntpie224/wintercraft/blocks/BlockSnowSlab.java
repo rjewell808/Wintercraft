@@ -15,9 +15,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.client.model.ForgeBlockStateV1.Variant;
 
 public class BlockSnowSlab extends BlockSlab{
-
+	
 	public BlockSnowSlab(String name, Material material)
 	{
 		super(material);
@@ -80,34 +81,6 @@ public class BlockSnowSlab extends BlockSlab{
 	@Override
 	protected BlockStateContainer createBlockState() {
 		return new BlockStateContainer(this, new IProperty[] {HALF});
-	}
-	
-	public static class Double extends BlockSnowSlab
-	{
-		public Double(String name, Material material)
-		{
-			super(name, material);
-		}
-		
-		@Override
-		public boolean isDouble()
-		{
-			return true;
-		}
-	}
-	
-	public static class Half extends BlockSnowSlab
-	{
-		public Half(String name, Material material)
-		{
-			super(name, material);
-		}
-		
-		@Override
-		public boolean isDouble()
-		{
-			return false;
-		}
 	}
 
 	@Override

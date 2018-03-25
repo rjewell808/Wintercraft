@@ -18,6 +18,10 @@ public class FreezerRecipes {
 		//Iced Stone
 		if(itemsEqual(item1, item2, new ItemStack(Item.getItemFromBlock(Blocks.STONE), 1), new ItemStack(WinterItems.ice_chunk, 1)))
 			return new ItemStack(Item.getItemFromBlock(WinterBlocks.iced_stone), 1);
+		
+		//Iced Cobblestone
+		if(itemsEqual(item1, item2, new ItemStack(Item.getItemFromBlock(Blocks.COBBLESTONE), 1), new ItemStack(WinterItems.ice_chunk, 1)))
+			return new ItemStack(Item.getItemFromBlock(WinterBlocks.iced_cobble), 1);
 			
 		return ItemStack.EMPTY;
 	}

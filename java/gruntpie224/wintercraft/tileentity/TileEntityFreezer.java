@@ -379,45 +379,53 @@ public class TileEntityFreezer extends TileEntityLockable implements ITickable, 
         }
         else
         {
-            Item i = stack.getItem();
-            if (i == Items.SNOWBALL)
-		     {
-		             return 100;
-		     }
-		     if (i == Item.getItemFromBlock(Blocks.SNOW_LAYER))
-		     {
-		             return 150;
-		     }
-		     if (i == Item.getItemFromBlock(WinterBlocks.snow_slab_single))
-		     {
-		             return 150;
-		     }
-		     //if (i == WinterItems.snowball_ice)
-		     //{
-		     //        return 300;
-		     //}
-		     if (i == Item.getItemFromBlock(Blocks.SNOW))
-		     {
-		             return 400;
-		     }
-		     if (i == Item.getItemFromBlock(WinterBlocks.snow_bricks))
-		     {
-		             return 500;
-		     }
-		     if (i == Item.getItemFromBlock(WinterBlocks.snow_stairs))
-		     {
-		             return 1800;
-		     }
-		     if (i == Item.getItemFromBlock(Blocks.ICE))
-		     {
-		             return 2400;
-		     }
-		     if (i == Item.getItemFromBlock(Blocks.PACKED_ICE))
-		     {
-		             return 2600;
-		     }
-		     
-		     return 0;
+        	Item i = stack.getItem();
+    		if (i == Items.SNOWBALL)
+			 {
+			         return 100;
+			 }
+			 if (i == Item.getItemFromBlock(Blocks.SNOW_LAYER))
+			 {
+			         return 150;
+			 }
+			 if (i == WinterItems.ice_shard)
+			 {
+			         return 150;
+			 }
+			 if (i == Item.getItemFromBlock(WinterBlocks.snow_slab_single))
+			 {
+			         return 150;
+			 }
+			 //if (i == WinterItems.snowball_ice)
+			 //{
+			 //        return 300;
+			 //}
+			 if (i == Item.getItemFromBlock(Blocks.SNOW))
+			 {
+			         return 400;
+			 }
+			 if (i == Item.getItemFromBlock(WinterBlocks.snow_bricks))
+			 {
+			         return 500;
+			 }
+			 if (i == WinterItems.ice_chunk)
+			 {
+			         return 1250;
+			 }
+			 if (i == Item.getItemFromBlock(WinterBlocks.snow_stairs))
+			 {
+			         return 1800;
+			 }
+			 if (i == Item.getItemFromBlock(Blocks.ICE))
+			 {
+			         return 2400;
+			 }
+			 if (i == Item.getItemFromBlock(Blocks.PACKED_ICE))
+			 {
+			         return 2600;
+			 }
+ 
+ return 0;
         }
     }
 

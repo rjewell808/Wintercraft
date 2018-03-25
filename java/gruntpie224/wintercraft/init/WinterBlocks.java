@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import gruntpie224.wintercraft.blocks.BlockBasic;
 import gruntpie224.wintercraft.blocks.BlockFreezer;
 import gruntpie224.wintercraft.blocks.BlockSnowSlab;
+import gruntpie224.wintercraft.blocks.BlockSnowSlabDouble;
+import gruntpie224.wintercraft.blocks.BlockSnowSlabSingle;
 import gruntpie224.wintercraft.blocks.BlockSnowStairs;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -36,10 +38,10 @@ public class WinterBlocks {
 	public static Block snow_stairs;
 	
 	@GameRegistry.ObjectHolder("wc:snow_slab_single")
-	public static BlockSnowSlab snow_slab_single;
+	public static BlockSnowSlabSingle snow_slab_single;
 	
 	@GameRegistry.ObjectHolder("wc:snow_slab_double")
-	public static BlockSnowSlab snow_slab_double;
+	public static BlockSnowSlabDouble snow_slab_double;
 	
 	@GameRegistry.ObjectHolder("wc:freezer")
 	public static BlockFreezer freezer;
@@ -61,10 +63,10 @@ public class WinterBlocks {
 		snow_stairs = new BlockSnowStairs("snow_stairs", Blocks.SNOW.getBlockState().getBaseState());
 		all_blocks.add(snow_stairs);
 		
-		snow_slab_single = new BlockSnowSlab.Half("snow_slab_single", Material.SNOW);
+		snow_slab_single = new BlockSnowSlabSingle("snow_slab_single", Material.SNOW);
 		//all_blocks.add(snow_slab_single);
 		
-		snow_slab_double = new BlockSnowSlab.Double("snow_slab_double", Material.SNOW);
+		snow_slab_double = new BlockSnowSlabDouble("snow_slab_double", Material.SNOW);
 		//all_blocks.add(snow_slab_double);
 		
 		freezer = new BlockFreezer("freezer", false);
