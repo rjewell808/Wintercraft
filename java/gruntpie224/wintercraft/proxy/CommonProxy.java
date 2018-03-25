@@ -2,9 +2,13 @@ package gruntpie224.wintercraft.proxy;
 
 import java.io.File;
 
+import gruntpie224.wintercraft.Wintercraft;
+import gruntpie224.wintercraft.WintercraftReference;
 import gruntpie224.wintercraft.helper.Config;
+import gruntpie224.wintercraft.helper.gui.GuiProxy;
 import gruntpie224.wintercraft.init.WinterBlocks;
 import gruntpie224.wintercraft.init.WinterItems;
+import gruntpie224.wintercraft.tileentity.TileEntityFreezer;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
@@ -16,6 +20,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.event.FMLServerStoppingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
@@ -27,7 +33,11 @@ public class CommonProxy {
 		config = new Configuration(new File(directory.getPath(), "wintercraft.cfg"));
 		Config.readConfig();
 	}
-	public void init(FMLInitializationEvent event){}
+	
+	public void init(FMLInitializationEvent event){
+		NetworkRegistry.INSTANCE.registerGuiHandler(Wintercraft.instance, new GuiProxy());
+	}
+	
 	public void postInit(FMLPostInitializationEvent event){
 		if(config.hasChanged())
 			config.save();
@@ -40,6 +50,8 @@ public class CommonProxy {
 	{
 		WinterBlocks.initBlocks();
 		WinterBlocks.registerBlocks(event);
+		
+		GameRegistry.registerTileEntity(TileEntityFreezer.class, WintercraftReference.MOD_ID + "_freezer");
 	}
 	
 	@SubscribeEvent

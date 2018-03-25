@@ -3,9 +3,9 @@ package gruntpie224.wintercraft.init;
 import java.util.ArrayList;
 
 import gruntpie224.wintercraft.blocks.BlockBasic;
+import gruntpie224.wintercraft.blocks.BlockFreezer;
 import gruntpie224.wintercraft.blocks.BlockSnowSlab;
 import gruntpie224.wintercraft.blocks.BlockSnowStairs;
-import gruntpie224.wintercraft.blocks.SlabBasic;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -41,6 +41,12 @@ public class WinterBlocks {
 	@GameRegistry.ObjectHolder("wc:snow_slab_double")
 	public static BlockSnowSlab snow_slab_double;
 	
+	@GameRegistry.ObjectHolder("wc:freezer")
+	public static BlockFreezer freezer;
+	
+	@GameRegistry.ObjectHolder("wc:freezer_active")
+	public static BlockFreezer freezer_active;
+	
 	public static void initBlocks()
 	{
 		iced_cobble = new BlockBasic("iced_cobble", Material.ROCK, SoundType.STONE).setHardness(2.0f).setResistance(10.0F);
@@ -60,6 +66,12 @@ public class WinterBlocks {
 		
 		snow_slab_double = new BlockSnowSlab.Double("snow_slab_double", Material.SNOW);
 		//all_blocks.add(snow_slab_double);
+		
+		freezer = new BlockFreezer("freezer", false);
+		//all_blocks.add(freezer);
+		
+		freezer_active = new BlockFreezer("freezer_active", true);
+		//all_blocks.add(freezer_active);
 	}
 	
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
@@ -69,6 +81,8 @@ public class WinterBlocks {
 		
 		event.getRegistry().register(snow_slab_single);
 		event.getRegistry().register(snow_slab_double);
+		event.getRegistry().register(freezer);
+		event.getRegistry().register(freezer_active);
 	}
 	
 	public static void registerBlockItems(RegistryEvent.Register<Item> event)
@@ -77,6 +91,9 @@ public class WinterBlocks {
 			event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
 		
 		event.getRegistry().register(new ItemSlab(snow_slab_single, snow_slab_single, snow_slab_double).setRegistryName(snow_slab_single.getRegistryName()));
+		
+		event.getRegistry().register(new ItemBlock(freezer).setRegistryName(freezer.getRegistryName()));
+		event.getRegistry().register(new ItemBlock(freezer_active).setRegistryName(freezer_active.getRegistryName()));
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -91,6 +108,8 @@ public class WinterBlocks {
 		
 		((BlockSnowStairs)snow_stairs).initModel();
 		registerRender(Item.getItemFromBlock(snow_slab_single));
+		freezer.initModel();
+		freezer_active.initModel();
 	}
 	
 	public static void registerRender(Item item) {
