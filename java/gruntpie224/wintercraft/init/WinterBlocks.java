@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import gruntpie224.wintercraft.blocks.BlockBasic;
 import gruntpie224.wintercraft.blocks.BlockFreezer;
-import gruntpie224.wintercraft.blocks.BlockSnowSlab;
+import gruntpie224.wintercraft.blocks.BlockFruitCake;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabDouble;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabSingle;
 import gruntpie224.wintercraft.blocks.BlockSnowStairs;
@@ -34,6 +34,9 @@ public class WinterBlocks {
 	@GameRegistry.ObjectHolder("wc:snow_bricks")
 	public static Block snow_bricks;
 	
+	@GameRegistry.ObjectHolder("wc:fruit_cake_bricks")
+	public static Block fruit_cake_bricks;
+	
 	@GameRegistry.ObjectHolder("wc:snow_stairs")
 	public static Block snow_stairs;
 	
@@ -44,10 +47,13 @@ public class WinterBlocks {
 	public static BlockSnowSlabDouble snow_slab_double;
 	
 	@GameRegistry.ObjectHolder("wc:freezer")
-	public static BlockFreezer freezer;
+	public static Block freezer;
 	
 	@GameRegistry.ObjectHolder("wc:freezer_active")
-	public static BlockFreezer freezer_active;
+	public static Block freezer_active;
+	
+	@GameRegistry.ObjectHolder("wc:fruit_cake")
+	public static Block fruit_cake;
 	
 	public static void initBlocks()
 	{
@@ -60,20 +66,24 @@ public class WinterBlocks {
 		snow_bricks = new BlockBasic("snow_bricks", Material.ROCK, SoundType.SNOW).setHardness(1.5f).setResistance(8.0F);
 		all_blocks.add(snow_bricks);
 		
+		fruit_cake_bricks = new BlockBasic("fruit_cake_bricks", Material.ROCK, SoundType.STONE).setHardness(1.5f).setResistance(10.0F);
+		all_blocks.add(fruit_cake_bricks);
+		
 		snow_stairs = new BlockSnowStairs("snow_stairs", Blocks.SNOW.getBlockState().getBaseState());
 		all_blocks.add(snow_stairs);
 		
 		snow_slab_single = new BlockSnowSlabSingle("snow_slab_single", Material.SNOW);
-		//all_blocks.add(snow_slab_single);
 		
 		snow_slab_double = new BlockSnowSlabDouble("snow_slab_double", Material.SNOW);
-		//all_blocks.add(snow_slab_double);
 		
-		freezer = new BlockFreezer("freezer", false);
-		//all_blocks.add(freezer);
+		freezer = new BlockFreezer("freezer", false).setHardness(2.5F);
+		all_blocks.add(freezer);
 		
-		freezer_active = new BlockFreezer("freezer_active", true);
-		//all_blocks.add(freezer_active);
+		freezer_active = new BlockFreezer("freezer_active", true).setHardness(2.5F);
+		all_blocks.add(freezer_active);
+		
+		fruit_cake = new BlockFruitCake("fruit_cake").setHardness(0.5F);
+		all_blocks.add(fruit_cake);
 	}
 	
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
@@ -83,8 +93,6 @@ public class WinterBlocks {
 		
 		event.getRegistry().register(snow_slab_single);
 		event.getRegistry().register(snow_slab_double);
-		event.getRegistry().register(freezer);
-		event.getRegistry().register(freezer_active);
 	}
 	
 	public static void registerBlockItems(RegistryEvent.Register<Item> event)
@@ -93,28 +101,19 @@ public class WinterBlocks {
 			event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
 		
 		event.getRegistry().register(new ItemSlab(snow_slab_single, snow_slab_single, snow_slab_double).setRegistryName(snow_slab_single.getRegistryName()));
-		
-		event.getRegistry().register(new ItemBlock(freezer).setRegistryName(freezer.getRegistryName()));
-		event.getRegistry().register(new ItemBlock(freezer_active).setRegistryName(freezer_active.getRegistryName()));
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public static void initModels()
 	{
 		for(Block block : all_blocks)
-			try{
-				((BlockBasic) block).initModel();
-			} catch (Exception e){
-				
-			}
+			registerRender(Item.getItemFromBlock(block));
 		
-		((BlockSnowStairs)snow_stairs).initModel();
 		registerRender(Item.getItemFromBlock(snow_slab_single));
-		freezer.initModel();
-		freezer_active.initModel();
+		registerRender(Item.getItemFromBlock(snow_slab_double));
 	}
 	
 	public static void registerRender(Item item) {
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation( item.getRegistryName(), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 }

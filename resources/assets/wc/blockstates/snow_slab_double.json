@@ -1,5 +1,6 @@
 {
 	"variants": {
-        "normal": { "model": "wc:snow_slab_full" }
+        "half=top": { "model": "wc:snow_slab_full" },
+		"half=bottom": { "model": "wc:snow_slab_full" }
     }
 }

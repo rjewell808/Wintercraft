@@ -6,6 +6,7 @@ import gruntpie224.wintercraft.tileentity.TileEntityFreezer;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
@@ -41,6 +42,7 @@ public class BlockFreezer extends BlockContainer implements ITileEntityProvider{
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		setRegistryName(name);
 		setUnlocalizedName(name);
+		this.blockSoundType = SoundType.GLASS;
 		
 		if(!is_freezing)
 			this.setCreativeTab(Wintercraft.wcTab);
