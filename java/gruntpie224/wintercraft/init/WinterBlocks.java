@@ -3,11 +3,13 @@ package gruntpie224.wintercraft.init;
 import java.util.ArrayList;
 
 import gruntpie224.wintercraft.blocks.BlockBasic;
+import gruntpie224.wintercraft.blocks.BlockCandle;
 import gruntpie224.wintercraft.blocks.BlockFreezer;
 import gruntpie224.wintercraft.blocks.BlockFruitCake;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabDouble;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabSingle;
 import gruntpie224.wintercraft.blocks.BlockSnowStairs;
+import gruntpie224.wintercraft.items.ItemCandle;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -55,6 +57,9 @@ public class WinterBlocks {
 	@GameRegistry.ObjectHolder("wc:fruit_cake")
 	public static Block fruit_cake;
 	
+	@GameRegistry.ObjectHolder("wc:candle")
+	public static Block candle;
+	
 	public static void initBlocks()
 	{
 		iced_cobble = new BlockBasic("iced_cobble", Material.ROCK, SoundType.STONE).setHardness(2.0f).setResistance(10.0F);
@@ -84,6 +89,9 @@ public class WinterBlocks {
 		
 		fruit_cake = new BlockFruitCake("fruit_cake").setHardness(0.5F);
 		all_blocks.add(fruit_cake);
+		
+		candle = new BlockCandle("candle");
+		//all_blocks.add(candle);
 	}
 	
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
@@ -93,6 +101,8 @@ public class WinterBlocks {
 		
 		event.getRegistry().register(snow_slab_single);
 		event.getRegistry().register(snow_slab_double);
+		event.getRegistry().register(candle);
+		
 	}
 	
 	public static void registerBlockItems(RegistryEvent.Register<Item> event)
@@ -101,6 +111,7 @@ public class WinterBlocks {
 			event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
 		
 		event.getRegistry().register(new ItemSlab(snow_slab_single, snow_slab_single, snow_slab_double).setRegistryName(snow_slab_single.getRegistryName()));
+		event.getRegistry().register(new ItemCandle("candle", candle).setRegistryName(candle.getRegistryName()));
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -111,6 +122,7 @@ public class WinterBlocks {
 		
 		registerRender(Item.getItemFromBlock(snow_slab_single));
 		registerRender(Item.getItemFromBlock(snow_slab_double));
+		registerRender(Item.getItemFromBlock(candle));
 	}
 	
 	public static void registerRender(Item item) {

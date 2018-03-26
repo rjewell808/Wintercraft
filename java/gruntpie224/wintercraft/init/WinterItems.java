@@ -3,8 +3,11 @@ package gruntpie224.wintercraft.init;
 import java.util.ArrayList;
 
 import gruntpie224.wintercraft.items.ItemBasic;
+import gruntpie224.wintercraft.items.ItemCandle;
 import gruntpie224.wintercraft.items.ItemFruitCake;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -31,6 +34,10 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:fruit_cake_item")
 	public static Item fruit_cake_item;
 	
+	@GameRegistry.ObjectHolder("wc:candle_item")
+	public static Item candle_item;
+	
+	
 	public static void initItems()
 	{
 		ice_shard = new ItemBasic("ice_shard");
@@ -50,6 +57,8 @@ public class WinterItems {
 		
 		fruit_cake_item = new ItemFruitCake("fruit_cake_item", WinterBlocks.fruit_cake);
 		all_items.add(fruit_cake_item);
+		
+		candle_item = new ItemCandle("candle_item", WinterBlocks.candle);
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -57,11 +66,19 @@ public class WinterItems {
 	{
 		for(Item item : all_items)
 			((ItemBasic)item).initModel();
+		
+		//registerRender(candle_item);
 	}
 	
 	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
 		for(Item item : all_items)
 			event.getRegistry().register(item);
+		
+		//event.getRegistry().register(candle_item);
+	}
+	
+	public static void registerRender(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 }

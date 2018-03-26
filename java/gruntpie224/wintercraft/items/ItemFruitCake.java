@@ -36,7 +36,7 @@ public class ItemFruitCake extends ItemBasic{
     {
 		par3List.add("\u00a77\u00a7oPer Slice");
 		par3List.add("\u00a7eFills 2 Hunger");
-        par3List.add("\u00a7cGives 10 Second Strength Boost");
+        par3List.add("\u00a7cGives 30 Second Strength Boost");
     }
 
     /**
