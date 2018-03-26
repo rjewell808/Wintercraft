@@ -9,6 +9,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -95,29 +96,28 @@ public class BlockCandle extends BlockBasic{
         }
     }
 	
-	@Override
-	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
+    /**
+     * Checks if this block can be placed exactly at the given position.
+     */
+    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
-        if (!this.canBlockStay(worldIn, pos))
-        {
-            worldIn.destroyBlock(pos, true);
-        }
+        IBlockState downState = worldIn.getBlockState(pos.down());
+        return super.canPlaceBlockAt(worldIn, pos) && (downState.isTopSolid() || downState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID);
     }
-	
-	public boolean canBlockStay(World worldIn, BlockPos pos)
+
+    /**
+     * Called when a neighboring block was changed and marks that this state should perform any checks during a neighbor
+     * change. Cases may include when redstone power is updated, cactus blocks popping off due to a neighboring solid
+     * block, etc.
+     */
+    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
     {
-        for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
+        IBlockState downState = worldIn.getBlockState(pos.down());
+        if (!downState.isTopSolid() && downState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID)
         {
-            Material material = worldIn.getBlockState(pos.offset(enumfacing)).getMaterial();
-
-            if (material.isSolid() || material == Material.LAVA)
-            {
-                return false;
-            }
+            this.dropBlockAsItem(worldIn, pos, state, 0);
+            worldIn.setBlockToAir(pos);
         }
-
-        IBlockState state = worldIn.getBlockState(pos.down());
-        return !worldIn.getBlockState(pos.up()).getMaterial().isLiquid();
     }
 	
 	/**
