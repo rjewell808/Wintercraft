@@ -2,6 +2,7 @@ package gruntpie224.wintercraft.init;
 
 import java.util.ArrayList;
 
+import gruntpie224.wintercraft.WintercraftReference;
 import gruntpie224.wintercraft.blocks.BlockBasic;
 import gruntpie224.wintercraft.blocks.BlockCandle;
 import gruntpie224.wintercraft.blocks.BlockFreezer;
@@ -122,10 +123,16 @@ public class WinterBlocks {
 		
 		registerRender(Item.getItemFromBlock(snow_slab_single));
 		registerRender(Item.getItemFromBlock(snow_slab_double));
-		registerRender(Item.getItemFromBlock(candle));
+		
+		for(int i = 0; i < 16; i++)
+			registerRender(Item.getItemFromBlock(candle), i, ItemCandle.names[i]);
 	}
 	
 	public static void registerRender(Item item) {
 		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+	}
+	
+	public static void registerRender(Item item, int meta, String name) {
+		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(WintercraftReference.MOD_ID + ":" + name, "inventory"));
 	}
 }

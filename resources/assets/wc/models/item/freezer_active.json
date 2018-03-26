@@ -3,7 +3,7 @@
     "textures": {
         "top": "wc:blocks/freezer_top",
 		"down": "wc:blocks/freezer_bottom",
-        "front": "wc:blocks/freezer_front_active",
+        "front": "wc:blocks/freezer_front",
         "side": "wc:blocks/freezer_side"
     }
 }

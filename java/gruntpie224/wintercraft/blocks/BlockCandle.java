@@ -37,7 +37,7 @@ public class BlockCandle extends BlockBasic{
 	{
 		super(name, Material.CIRCUITS ,SoundType.STONE);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(COLOR, EnumDyeColor.WHITE));
-		this.setLightLevel(0.7F);
+		this.setLightLevel(0.8F);
 		float f = 0.2F;
 	}
 
