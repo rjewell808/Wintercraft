@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemCandle extends ItemBlock{
 	public static final PropertyEnum COLOR = PropertyEnum.create("color", EnumDyeColor.class);   
+	private String name;
 	
 	public ItemCandle(String name, Block candle)
 	{
@@ -33,6 +34,7 @@ public class ItemCandle extends ItemBlock{
 	    this.setMaxDamage(0);
 	    this.setUnlocalizedName(name);
 	    this.setCreativeTab(Wintercraft.wcTab);
+	    this.name = name;
 	}
 	
 	public int getMetadata(int damage)
@@ -46,34 +48,33 @@ public class ItemCandle extends ItemBlock{
 	    for (int x = 0; x < 16; x++)
 	    {
 	        par3List.add(new ItemStack(this, 1, x));
-	        this.registerRender(this, x, names[x]);
 	    }
 	    
 	}	
 	
 	public static final String[] names = new String[] {
-			"candle_white", 
-			"candle_orange", 
-			"candle_magenta", 
-			"candle_ltblue",
-			"candle_yellow",
-			"candle_lime",
-			"candle_pink",
-			"candle_dkgray",
-			"candle_ltgray",
-			"candle_cyan",
-			"candle_purple",
-			"candle_blue",
-			"candle_brown",
-			"candle_green",
-			"candle_red",
-			"candle_black"
+			"_white", 
+			"_orange", 
+			"_magenta", 
+			"_ltblue",
+			"_yellow",
+			"_lime",
+			"_pink",
+			"_dkgray",
+			"_ltgray",
+			"_cyan",
+			"_purple",
+			"_blue",
+			"_brown",
+			"_green",
+			"_red",
+			"_black"
 			};
 	
 	public String getUnlocalizedName(ItemStack stack)
 	{
 	    int i = MathHelper.clamp(stack.getItemDamage(), 0, 16);
-	    return "item." + names[i];
+	    return "item." + name + names[i];
 	}
 	
 	public static void registerRender(Item item, int meta, String name) {

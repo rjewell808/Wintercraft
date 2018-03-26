@@ -37,6 +37,9 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:candle_item")
 	public static Item candle_item;
 	
+	@GameRegistry.ObjectHolder("wc:ornament_item")
+	public static Item ornament_item;
+	
 	
 	public static void initItems()
 	{
@@ -59,6 +62,8 @@ public class WinterItems {
 		all_items.add(fruit_cake_item);
 		
 		candle_item = new ItemCandle("candle_item", WinterBlocks.candle);
+			
+		ornament_item = new ItemCandle("ornament_item", WinterBlocks.ornament);
 	}
 	
 	@SideOnly(Side.CLIENT)

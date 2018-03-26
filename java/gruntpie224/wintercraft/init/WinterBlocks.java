@@ -7,6 +7,7 @@ import gruntpie224.wintercraft.blocks.BlockBasic;
 import gruntpie224.wintercraft.blocks.BlockCandle;
 import gruntpie224.wintercraft.blocks.BlockFreezer;
 import gruntpie224.wintercraft.blocks.BlockFruitCake;
+import gruntpie224.wintercraft.blocks.BlockOrnament;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabDouble;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabSingle;
 import gruntpie224.wintercraft.blocks.BlockSnowStairs;
@@ -65,6 +66,10 @@ public class WinterBlocks {
 	@GameRegistry.ObjectHolder("wc:star")
 	public static Block star;
 	
+	@GameRegistry.ObjectHolder("wc:ornament")
+	public static Block ornament;
+	
+	
 	public static void initBlocks()
 	{
 		iced_cobble = new BlockBasic("iced_cobble", Material.ROCK, SoundType.STONE).setHardness(2.0f).setResistance(10.0F);
@@ -99,6 +104,8 @@ public class WinterBlocks {
 		//all_blocks.add(candle);
 		
 		star = new BlockStar("star", Material.GLASS).setHardness(0.2f);
+		
+		ornament = new BlockOrnament("ornament").setHardness(0.3f);
 	}
 	
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
@@ -110,6 +117,7 @@ public class WinterBlocks {
 		event.getRegistry().register(snow_slab_double);
 		event.getRegistry().register(candle);
 		event.getRegistry().register(star);
+		event.getRegistry().register(ornament);
 		
 	}
 	
@@ -120,6 +128,7 @@ public class WinterBlocks {
 		
 		event.getRegistry().register(new ItemSlab(snow_slab_single, snow_slab_single, snow_slab_double).setRegistryName(snow_slab_single.getRegistryName()));
 		event.getRegistry().register(new ItemCandle("candle", candle).setRegistryName(candle.getRegistryName()));
+		event.getRegistry().register(new ItemCandle("ornament", ornament).setRegistryName(ornament.getRegistryName()));
 		event.getRegistry().register(new ItemBlock(star).setRegistryName(star.getRegistryName()));
 	}
 	
@@ -134,7 +143,10 @@ public class WinterBlocks {
 		registerRender(Item.getItemFromBlock(star));
 		
 		for(int i = 0; i < 16; i++)
-			registerRender(Item.getItemFromBlock(candle), i, ItemCandle.names[i]);
+		{
+			registerRender(Item.getItemFromBlock(candle), i, "candle" + ItemCandle.names[i]);
+			registerRender(Item.getItemFromBlock(ornament), i, "ornament" + ItemCandle.names[i]);
+		}
 	}
 	
 	public static void registerRender(Item item) {
