@@ -31,7 +31,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockCandle extends BlockBasic{
 	
 	public static final PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.<EnumDyeColor>create("color", EnumDyeColor.class);
-	protected static final AxisAlignedBB CANDLE_AABB = new AxisAlignedBB(0.4D, 0.0D, 0.4D, 0.6D, 0.5D, 0.6D);
+	protected static final AxisAlignedBB CANDLE_AABB = new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 0.5D, 0.65D);
 	
 	public BlockCandle(String name)
 	{

@@ -1,7 +1,7 @@
 {
     "parent": "wc:block/candle_block",
 	"textures": {
-		"particle": "blocks/hardened_clay_stained_lime",
-		"0": "blocks/hardened_clay_stained_lime"
+		"particle": "blocks/concrete_powder_lime",
+		"0": "blocks/concrete_powder_lime"
 	}
 }

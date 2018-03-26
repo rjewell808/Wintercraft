@@ -1,8 +1,8 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
-        "0": "blocks/hardened_clay_stained_red",
-        "1": "blocks/hardened_clay_stained_gray",
+        "0": "blocks/concrete_powder_red",
+        "1": "blocks/concrete_powder_gray",
 		"particle": "#0"
     },
     "elements": [
