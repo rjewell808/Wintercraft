@@ -29,7 +29,7 @@ import net.minecraft.world.World;
 public class BlockOrnament extends BlockBasic{
 	
 	public static final PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.<EnumDyeColor>create("color", EnumDyeColor.class);
-	protected static final AxisAlignedBB ORNAMENT_AABB = new AxisAlignedBB(0.4F, 0.5F, 0.4F, 0.7F, 1F, 0.7F);
+	protected static final AxisAlignedBB ORNAMENT_AABB = new AxisAlignedBB(0.375F, 0.57F, 0.375F, 0.685F, .87F, 0.687F);
 	
 	public BlockOrnament(String name)
 	{
@@ -70,6 +70,12 @@ public class BlockOrnament extends BlockBasic{
     @Override
     public boolean isOpaqueCube(IBlockState blockState) {
         return false;
+    }
+    
+    @Override
+	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
+    {
+        return BlockFaceShape.UNDEFINED;
     }
 
 	 /**

@@ -32,8 +32,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockCandle extends BlockBasic{
 	
 	public static final PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.<EnumDyeColor>create("color", EnumDyeColor.class);
-	protected static final AxisAlignedBB CANDLE_AABB = new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 0.5D, 0.65D);
-	
+	protected static final AxisAlignedBB CANDLE_AABB = new AxisAlignedBB(0.44D, 0.0D, 0.375D, 0.63D, 0.375D, 0.56D);
 	public BlockCandle(String name)
 	{
 		super(name, Material.CIRCUITS ,SoundType.STONE);
@@ -54,11 +53,17 @@ public class BlockCandle extends BlockBasic{
         return CANDLE_AABB;
     }
 	
+	@Override
+	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
+    {
+        return BlockFaceShape.UNDEFINED;
+    }
+	
 
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(WinterItems.candle_item);
+        return new ItemStack(WinterItems.candle_item, 1);
     }
 
 	public EnumBlockRenderType getRenderType(IBlockState state)
@@ -74,6 +79,11 @@ public class BlockCandle extends BlockBasic{
     @Override
     public boolean isOpaqueCube(IBlockState blockState) {
         return false;
+    }
+    
+    @Override
+    public boolean isFullCube(IBlockState blockState){
+    	return false;
     }
 
 	 /**
