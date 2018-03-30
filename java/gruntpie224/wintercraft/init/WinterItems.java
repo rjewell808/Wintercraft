@@ -60,6 +60,15 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:venison_cooked")
 	public static Item venison_cooked;
 	
+	@GameRegistry.ObjectHolder("wc:christmas_cookie")
+	public static Item christmas_cookie;
+	
+	@GameRegistry.ObjectHolder("wc:egg_nog")
+	public static Item egg_nog;
+	
+	@GameRegistry.ObjectHolder("wc:choc_milk")
+	public static Item choc_milk;
+	
 	public static void initItems()
 	{
 		ice_shard = new ItemBasic("ice_shard");
@@ -100,6 +109,15 @@ public class WinterItems {
 		
 		venison_cooked = new ItemWinterFood("venison_cooked", 10, 0.9F, true);
 		all_items.add(venison_cooked);
+		
+		christmas_cookie = new ItemWinterFood("christmas_cookie", 11, 1.2F, false);
+		all_items.add(christmas_cookie);
+		
+		egg_nog = new ItemWinterFood("egg_nog", 12, 0.7F, false, true);
+		all_items.add(egg_nog);
+		
+		choc_milk = new ItemWinterFood("choc_milk", 8, 0.8F, false, true, "\u00a77\u00a7oWarm it up for a tastier drink!");
+		all_items.add(choc_milk);
 	}
 	
 	@SideOnly(Side.CLIENT)
