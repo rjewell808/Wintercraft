@@ -1,5 +1,31 @@
 # Changelog
 
+## [Wintercraft-2.0.0] - UNRELEASED
+For MC 1.12.2
+
+### Changed
+- Updated to 1.12.2
+- Increased Candle brightness
+- Candle textures are based on Concrete Powder colors
+- Candle particles altered
+- Increased Fruit Cake strength potion duration
+- Increased Ice Shard droprate from Ice
+- Ice Shards/Ice Chunks can be used as fuel in Freezer
+- Iced Cobble/Iced Stone resemble properties of Cobble/Stone more
+- Went to traditional config system
+  - Found at config/wintercraft.cfg
+- Always snowing option simplified
+  - Either it's on or off, no time based system anymore
+  
+### Fixed
+- Ornament bounding box
+- Candle bounding box
+- Snow Stairs drop when broken in Creative mode
+- Can't change config settings for a server
+
+### Removed
+- Wintercraft Polar Bears for Vanilla Polar Bears
+
 ## [Wintercraft-1.1.4.2] - 2016-11-28
 For MC 1.8.9 / 1.8
 ### Changed
