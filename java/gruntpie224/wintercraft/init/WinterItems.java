@@ -6,6 +6,7 @@ import gruntpie224.wintercraft.items.ItemBasic;
 import gruntpie224.wintercraft.items.ItemCandle;
 import gruntpie224.wintercraft.items.ItemFruitCake;
 import gruntpie224.wintercraft.items.ItemOrnamentRare;
+import gruntpie224.wintercraft.items.ItemWinterFood;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -44,6 +45,21 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:ornament_rare_item")
 	public static Item ornament_rare_item;
 	
+	@GameRegistry.ObjectHolder("wc:candy_cane")
+	public static Item candy_cane;
+	
+	@GameRegistry.ObjectHolder("wc:marshmallow")
+	public static Item marshmallow;
+	
+	@GameRegistry.ObjectHolder("wc:gingerbread_man")
+	public static Item gingerbread_man;
+	
+	@GameRegistry.ObjectHolder("wc:venison")
+	public static Item venison;
+	
+	@GameRegistry.ObjectHolder("wc:venison_cooked")
+	public static Item venison_cooked;
+	
 	public static void initItems()
 	{
 		ice_shard = new ItemBasic("ice_shard");
@@ -69,23 +85,34 @@ public class WinterItems {
 		ornament_item = new ItemCandle("ornament_item", WinterBlocks.ornament);
 		
 		ornament_rare_item = new ItemOrnamentRare("ornament_rare", WinterBlocks.ornament_rare);
+	
+		candy_cane = new ItemWinterFood("candy_cane", 3, 0.6F, false);
+		all_items.add(candy_cane);
+		
+		marshmallow = new ItemWinterFood("marshmallow", 1, 0.3F, false);
+		all_items.add(marshmallow);
+		
+		gingerbread_man = new ItemWinterFood("gingerbread_man", 3, 0.5F, false);
+		all_items.add(gingerbread_man);
+		
+		venison = new ItemWinterFood("venison_raw", 4, 0.3F, true);
+		all_items.add(venison);
+		
+		venison_cooked = new ItemWinterFood("venison_cooked", 10, 0.9F, true);
+		all_items.add(venison_cooked);
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public static void initModels()
 	{
 		for(Item item : all_items)
-			((ItemBasic)item).initModel();
-		
-		//registerRender(candle_item);
+			registerRender(item);
 	}
 	
 	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
 		for(Item item : all_items)
 			event.getRegistry().register(item);
-		
-		//event.getRegistry().register(candle_item);
 	}
 	
 	public static void registerRender(Item item) {
