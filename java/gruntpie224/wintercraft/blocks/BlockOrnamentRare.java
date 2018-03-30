@@ -2,10 +2,10 @@ package gruntpie224.wintercraft.blocks;
 
 import java.util.Random;
 
-import gruntpie224.wintercraft.Wintercraft;
 import gruntpie224.wintercraft.init.WinterItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -14,33 +14,29 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntitySkull;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockCandle extends BlockBasic{
+public class BlockOrnamentRare extends BlockBasic{
 	
-	public static final PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.<EnumDyeColor>create("color", EnumDyeColor.class);
-	protected static final AxisAlignedBB CANDLE_AABB = new AxisAlignedBB(0.44D, 0.0D, 0.375D, 0.63D, 0.375D, 0.56D);
-	public BlockCandle(String name)
+	public static final PropertyEnum<BlockOrnamentRare.EnumType> VARIANT = PropertyEnum.<BlockOrnamentRare.EnumType>create("variant", BlockOrnamentRare.EnumType.class);
+	
+	protected static final AxisAlignedBB ORNAMENT_AABB = new AxisAlignedBB(0.375F, 0.57F, 0.375F, 0.685F, .87F, 0.687F);
+	
+	public BlockOrnamentRare(String name)
 	{
-		super(name, Material.CIRCUITS ,SoundType.STONE);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(COLOR, EnumDyeColor.WHITE));
-		this.setLightLevel(0.8F);
+		super(name, Material.CIRCUITS ,SoundType.GLASS);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.CREEPER));
 		float f = 0.2F;
 	}
 
@@ -53,15 +49,9 @@ public class BlockCandle extends BlockBasic{
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
-        return CANDLE_AABB;
+        return ORNAMENT_AABB;
     }
 	
-	@Override
-	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
-    {
-        return BlockFaceShape.UNDEFINED;
-    }
-
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
@@ -90,8 +80,9 @@ public class BlockCandle extends BlockBasic{
     }
     
     @Override
-    public boolean isFullCube(IBlockState blockState){
-    	return false;
+	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
+    {
+        return BlockFaceShape.UNDEFINED;
     }
 
 	 /**
@@ -100,7 +91,7 @@ public class BlockCandle extends BlockBasic{
      */
     public int damageDropped(IBlockState state)
     {
-        return ((EnumDyeColor)state.getValue(COLOR)).getMetadata();
+        return ((EnumType)state.getValue(VARIANT)).getMetadata();
     }
 
     /**
@@ -108,7 +99,7 @@ public class BlockCandle extends BlockBasic{
      */
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
     {
-        for (EnumDyeColor enumdyecolor : EnumDyeColor.values())
+        for (EnumType enumdyecolor : EnumType.values())
         {
             items.add(new ItemStack(this, 1, enumdyecolor.getMetadata()));
         }
@@ -119,8 +110,8 @@ public class BlockCandle extends BlockBasic{
      */
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
-        IBlockState downState = worldIn.getBlockState(pos.down());
-        return super.canPlaceBlockAt(worldIn, pos) && (downState.isTopSolid() || downState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID);
+        IBlockState upState = worldIn.getBlockState(pos.up());
+        return super.canPlaceBlockAt(worldIn, pos) && (upState.isTopSolid() || upState.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID);
     }
 
     /**
@@ -130,8 +121,8 @@ public class BlockCandle extends BlockBasic{
      */
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
     {
-        IBlockState downState = worldIn.getBlockState(pos.down());
-        if (!downState.isTopSolid() && downState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID)
+        IBlockState upState = worldIn.getBlockState(pos.up());
+        if (!upState.isTopSolid() && upState.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) != BlockFaceShape.SOLID)
         {
             this.dropBlockAsItem(worldIn, pos, state, 0);
             worldIn.setBlockToAir(pos);
@@ -143,7 +134,7 @@ public class BlockCandle extends BlockBasic{
      */
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(COLOR, EnumDyeColor.byMetadata(meta));
+        return this.getDefaultState().withProperty(VARIANT, EnumType.byMetadata(meta));
     }
 
     /**
@@ -151,44 +142,84 @@ public class BlockCandle extends BlockBasic{
      */
     public int getMetaFromState(IBlockState state)
     {
-        return ((EnumDyeColor)state.getValue(COLOR)).getMetadata();
+        return ((EnumType)state.getValue(VARIANT)).getMetadata();
     }
 
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] {COLOR});
+        return new BlockStateContainer(this, new IProperty[] {VARIANT});
     }
-	
-	@Override
-	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
-	{
-		
-		double d0 = (double)pos.getX() + 0.54D;
-        double d1 = (double)pos.getY() + 0.38D;
-        double d2 = (double)pos.getZ() + 0.3D;
-        double d3 = 0.2199999988079071D;
-        double d4 = 0.17000001072883606D;
-	    super.randomDisplayTick(stateIn, worldIn, pos, rand);
-	
-	    for (int l = pos.getX() - 2; l <= pos.getX() + 2; ++l)
-	    {
-	        for (int i1 = pos.getZ() - 2; i1 <= pos.getZ() + 2; ++i1)
-	        {
-	            if (l > pos.getX() - 2 && l < pos.getX() + 2 && i1 == pos.getZ() - 1)
-	            {
-	                i1 = pos.getZ() + 2;
-	            }
-	
-	            if (rand.nextInt(20) == 0)
-	            {
-	                for (int j1 = pos.getY(); j1 <= pos.getY() + 1; ++j1)
-	                {
-                		worldIn.spawnParticle(EnumParticleTypes.FLAME, d0, d1 + d3, d2 + d4, 0.0D, 0.00D, 0.0D);
-                		worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0, d1 + d3 + 0.1D, d2 + d4, 0.0D, 0.005D, 0.0D); 
-	                }
-	            }
-	        }
-	    }
-	}
-	
+    
+    public static enum EnumType implements IStringSerializable
+    {
+        CREEPER(0, "creeper", MapColor.GREEN),
+        ENDERMAN(1, "enderman", MapColor.OBSIDIAN),
+        BLAZE(2, "blaze", MapColor.YELLOW);
+       
+        private static final BlockOrnamentRare.EnumType[] META_LOOKUP = new BlockOrnamentRare.EnumType[values().length];
+        private final int meta;
+        private final String name;
+        private final String unlocalizedName;
+        /** The color that represents this entry on a map. */
+        private final MapColor mapColor;
+
+        private EnumType(int metaIn, String nameIn, MapColor mapColorIn)
+        {
+            this(metaIn, nameIn, nameIn, mapColorIn);
+        }
+
+        private EnumType(int metaIn, String nameIn, String unlocalizedNameIn, MapColor mapColorIn)
+        {
+            this.meta = metaIn;
+            this.name = nameIn;
+            this.unlocalizedName = unlocalizedNameIn;
+            this.mapColor = mapColorIn;
+        }
+
+        public int getMetadata()
+        {
+            return this.meta;
+        }
+
+        /**
+         * The color which represents this entry on a map.
+         */
+        public MapColor getMapColor()
+        {
+            return this.mapColor;
+        }
+
+        public String toString()
+        {
+            return this.name;
+        }
+
+        public static BlockOrnamentRare.EnumType byMetadata(int meta)
+        {
+            if (meta < 0 || meta >= META_LOOKUP.length)
+            {
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        public String getName()
+        {
+            return this.name;
+        }
+
+        public String getUnlocalizedName()
+        {
+            return this.unlocalizedName;
+        }
+
+        static
+        {
+            for (BlockOrnamentRare.EnumType blockplanks$enumtype : values())
+            {
+                META_LOOKUP[blockplanks$enumtype.getMetadata()] = blockplanks$enumtype;
+            }
+        }
+    }
 }

@@ -2,6 +2,7 @@ package gruntpie224.wintercraft.helper;
 
 import java.util.Random;
 
+import gruntpie224.wintercraft.init.WinterBlocks;
 import gruntpie224.wintercraft.init.WinterItems;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityBlaze;
@@ -9,6 +10,7 @@ import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityPolarBear;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
@@ -40,17 +42,17 @@ public class ItemDropHandler {
 		
 		if(entity instanceof EntityCreeper && rand < 5)
 		{
-			//entity.entityDropItem(new ItemStack(WinterItems.ornament_item_rare,1,0), 1);
+			entity.entityDropItem(new ItemStack(Item.getItemFromBlock(WinterBlocks.ornament_rare),1,0), 1);
 		}
 		
 		if(entity instanceof EntityEnderman && rand < 7)
 		{
-			//entity.entityDropItem(new ItemStack(WinterItems.ornament_item_rare,1,1), 1);
+			entity.entityDropItem(new ItemStack(Item.getItemFromBlock(WinterBlocks.ornament_rare),1,1), 1);
 		}
 		
 		if(entity instanceof EntityBlaze && rand < 5)
 		{
-			//entity.entityDropItem(new ItemStack(WinterItems.ornament_item_rare,1,2), 1);
+			entity.entityDropItem(new ItemStack(Item.getItemFromBlock(WinterBlocks.ornament_rare),1,2), 1);
 		}
 	}	
 }

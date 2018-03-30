@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import gruntpie224.wintercraft.items.ItemBasic;
 import gruntpie224.wintercraft.items.ItemCandle;
 import gruntpie224.wintercraft.items.ItemFruitCake;
+import gruntpie224.wintercraft.items.ItemOrnamentRare;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -40,6 +41,8 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:ornament_item")
 	public static Item ornament_item;
 	
+	@GameRegistry.ObjectHolder("wc:ornament_rare_item")
+	public static Item ornament_rare_item;
 	
 	public static void initItems()
 	{
@@ -64,6 +67,8 @@ public class WinterItems {
 		candle_item = new ItemCandle("candle_item", WinterBlocks.candle);
 			
 		ornament_item = new ItemCandle("ornament_item", WinterBlocks.ornament);
+		
+		ornament_rare_item = new ItemOrnamentRare("ornament_rare", WinterBlocks.ornament_rare);
 	}
 	
 	@SideOnly(Side.CLIENT)

@@ -50,11 +50,16 @@ public class BlockOrnament extends BlockBasic{
         return ORNAMENT_AABB;
     }
 	
-
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(WinterItems.ornament_item);
+        return this.getItem(world, pos, state);
+    }
+	
+	@Override
+	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
+    {
+        return new ItemStack(Item.getItemFromBlock(this), 1, this.getMetaFromState(state));
     }
 
 	public EnumBlockRenderType getRenderType(IBlockState state)

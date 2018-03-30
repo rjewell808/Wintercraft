@@ -8,11 +8,13 @@ import gruntpie224.wintercraft.blocks.BlockCandle;
 import gruntpie224.wintercraft.blocks.BlockFreezer;
 import gruntpie224.wintercraft.blocks.BlockFruitCake;
 import gruntpie224.wintercraft.blocks.BlockOrnament;
+import gruntpie224.wintercraft.blocks.BlockOrnamentRare;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabDouble;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabSingle;
 import gruntpie224.wintercraft.blocks.BlockSnowStairs;
 import gruntpie224.wintercraft.blocks.BlockStar;
 import gruntpie224.wintercraft.items.ItemCandle;
+import gruntpie224.wintercraft.items.ItemOrnamentRare;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -69,6 +71,8 @@ public class WinterBlocks {
 	@GameRegistry.ObjectHolder("wc:ornament")
 	public static Block ornament;
 	
+	@GameRegistry.ObjectHolder("wc:ornament_rare")
+	public static Block ornament_rare;
 	
 	public static void initBlocks()
 	{
@@ -106,6 +110,8 @@ public class WinterBlocks {
 		star = new BlockStar("star", Material.GLASS).setHardness(0.2f);
 		
 		ornament = new BlockOrnament("ornament").setHardness(0.3f);
+		
+		ornament_rare = new BlockOrnamentRare("ornament_rare").setHardness(0.3f);
 	}
 	
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
@@ -118,6 +124,7 @@ public class WinterBlocks {
 		event.getRegistry().register(candle);
 		event.getRegistry().register(star);
 		event.getRegistry().register(ornament);
+		event.getRegistry().register(ornament_rare);
 		
 	}
 	
@@ -129,6 +136,7 @@ public class WinterBlocks {
 		event.getRegistry().register(new ItemSlab(snow_slab_single, snow_slab_single, snow_slab_double).setRegistryName(snow_slab_single.getRegistryName()));
 		event.getRegistry().register(new ItemCandle("candle", candle).setRegistryName(candle.getRegistryName()));
 		event.getRegistry().register(new ItemCandle("ornament", ornament).setRegistryName(ornament.getRegistryName()));
+		event.getRegistry().register(new ItemOrnamentRare("ornament_rare", ornament_rare).setRegistryName(ornament_rare.getRegistryName()));
 		event.getRegistry().register(new ItemBlock(star).setRegistryName(star.getRegistryName()));
 	}
 	
@@ -146,6 +154,11 @@ public class WinterBlocks {
 		{
 			registerRender(Item.getItemFromBlock(candle), i, "candle" + ItemCandle.names[i]);
 			registerRender(Item.getItemFromBlock(ornament), i, "ornament" + ItemCandle.names[i]);
+		}
+		
+		for(int i = 0; i < ItemOrnamentRare.names.length; i++)
+		{
+			registerRender(Item.getItemFromBlock(ornament_rare), i, "ornament_rare" + ItemOrnamentRare.names[i]);
 		}
 	}
 	

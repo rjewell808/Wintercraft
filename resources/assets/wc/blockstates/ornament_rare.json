@@ -1,0 +1,7 @@
+{
+    "variants": {
+		"variant=creeper": {"model": "wc:ornament_rare_creeper"},
+		"variant=enderman": {"model": "wc:ornament_rare_enderman"},
+		"variant=blaze": {"model": "wc:ornament_rare_blaze"}
+    }
+}
