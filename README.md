@@ -5,7 +5,7 @@ Visit here for more information: http://www.gpmods.net/mods/wintercraft/
 
 ## Port to 1.12.2 Progress:
 - [ ] Blocks: 45%
-- [ ] Items: 38%
+- [ ] Items: 44%
 - [ ] Mobs: 11%
 - [ ] World Gen: 25%
 - [ ] Events: 50%
