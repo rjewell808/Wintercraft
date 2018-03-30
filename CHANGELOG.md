@@ -110,5 +110,7 @@ For MC 1.7.10 / 1.7.2
 - Snow Man Head bounding box is too small
 - No recipes for Refined Ice and Crystal ARmor
 
-###Removed
+### Removed
 - Unnecessary textures
+
+(Wil add older versions later)
