@@ -139,4 +139,129 @@ For MC 1.7.10 / 1.7.2
 ### Removed
 - Unnecessary textures
 
+##[Wintercraft-1.1.0] - 2014-11-29
+## Added
+- Albino Reindeer mob
+- Elf House structure
+- Giant Candy Cane structure
+- Cane Cane Log
+- Gift Box
+  - Trade with your friends by giving them gifts!
+  - Now finished!
+- Iced Cobble
+- Fireplace
+- Advent Calendar
+- Christmas Countdown Calendar
+- Empty Stocking Decor
+  - Added a recipe to get Full Stocking Decor
+- Rare mob ornaments
+- 16 more ornaments
+  - New colors!
+- Ice Skates
+- Antlers and Antlers Hat
+- Raw / Cooked Venison
+- Candy Cane Axe
+- Config option to toggle Wintercraft structure coordinates in console
+- Config to change Wintercraft Mob IDs
+  - Helps when Wintercraft is conflicting with other mods
+- Mini Snow Golem belly animation
+- "The Star on Top", "Special Decor" achievements
+- Model / particles for Snow Globe
+- Santa sound effect
+- Anvil repair ability to Chiseled, Refined, and Crystal Ice Tools
+- Particle effect to Star when it's active
+- Another Rocky Snowball recipe with gravel
+- Candle & Ornament items to place instead of placing the block directly
+  - Like how Sugar Cane works
+  - Makes things easier code-wise
+- Candles to Creative tabs as they weren't getting noticed
+- Cocoa Beans frop to Gingerbread Man
+
+## Changed
+- Updated to 1.7.10 / 1.7.2
+- Updated many textures
+- Freezer fuels include Wintercraft Ice and Packed Ice now
+- Ice Staff also gives Mining Fatigue effect
+- Wintercraft mobs spawn in the newer biomes
+- Snow Slabs are more like Snow
+- Star drops glowstone when broken
+- Chiseld Ice tool set recipe to also accept Iced Cobble
+- Snow Brick recipe to give 4 bricks
+- Ornaments so that they will fall if the block above them is removed
+- Getting Lights from Spruce Light Blocks to be more visible when they come off
+- Light Block so they drop when punched
+- Putting Lights on leaves will turn it to a Spruce Light Block
+  - When removed, the leaves will return to original state
+- Ice recipe to give 2 Ice Blocks
+- Mini Snow Golem spawn rate is higher
+- Penguin sounds to be quieter
+- Reindeer spawn rate is lower
+- Snow Slab texture
+- Freezer freeze tiem takes longer
+- Freezer takes new blocks as input
+- Icecream effects to last for 45 effects
+- Snow Man Head recipe
+- Stocking recipe to give 4
+- Candle recipe to give 3
+- Wreath recipe
+- Presents from Santa spawn under the tree instead of put in player inventory
+- Snow Globe is a block now
+- Candy Cane hunger to fill 1.5
+- Wintercraft creative tab icon
+- Reindeer drop Venison
+- Snow Globe texture
+- Crystal Ice Sword / Axe recipe to normal sword / axe recipe
+- Candles are less bright
+- Candy Cane Sword takes more durability when used for Candy Canes
+- "Christmas",  "Snow Globe", "Ice Staff", "Ice Staff Bad" achievements
+- Hardness of lights when on walls
+- Sound when placing lights
+- Names of some items / blocks
+- Ornaments now use metadata
+- Ice drops 0 - 2 Ice Shards when broken
+
+## Fixed
+- Freezer gets messed up with Optifine installed
+- Polar Bear hitboxes are too large
+- Snow Stairs have weird lighting
+- Santa event restarts even if he didn't visit
+- Santa Armor leaves the bonus effect on even when taking the armor off
+- Igloo spawns 1 block too high
+- Shift-clicking on Freezer doesn't work
+- Refined-Ice / Crystal Armor don't have textures
+- "Bad Staff" achievement trigger doesn't work
+- Snow Man Head doesn't face the player when placed
+- Freezer GUI
+- Ornaments can be placed under each other
+- Lights replace other lights when placing on the opposite side of a corner
+- Lights on walls get replaced by a block that is placed in front of it
+- Breeding Reindeer uses a Carrot-on-a-Stick instead of Carrots
+- Refined-Ice / Crystal Armor don't show up in the Creative tab
+- Game crashes when using the Ice Staff on non-mob entities such as minecarts
+- Able to spam the Snow Globe
+- Snow Slabs show as Snow Slab.name
+- Buckets aren't returned when used in the Freezer
+- Green Candle is a seperate block
+
+## Removed
+- Special Golden Hat for team members
+- Chiller Stick
+- Chiller Stick achievement
+- Magic Fire
+- Magic Snow
+- Magic Portal Block
+- Unfinished North Pole dimension
+- Seperate blue ornament
+- Seperate green ornamanet
+- Seperate green candle block
+- Winter Ice generation
+
+##[Wintercraft-1.0.3] - 2013-12-18
+
+##[Wintercraft-1.0.2] - 2013-12-08
+
+##[Wintercraft-1.0.1] - 2013-12-04
+
+##[Wintercraft-1.0.0] - 2013-12-03
+
 (Wil add older versions later)
