@@ -1,5 +1,5 @@
 # Changelog
-[2.0.0](/#wintercraft-200---UNRELEASED) [1.1.4.2](#wintercraft-1142---2016-11-28)
+[2.0.0](#wintercraft-200---UNRELEASED) / [1.1.4.2](#wintercraft-1142---2016-11-28) / [1.1.4.1](#wintercraft-1141---2016-11-23) / [1.1.4](#wintercraft-114---2016-11-23)
 
 ## [Wintercraft-2.0.0] - UNRELEASED
 For MC 1.12.2
