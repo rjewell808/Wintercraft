@@ -139,7 +139,7 @@ For MC 1.7.10 / 1.7.2
 ### Removed
 - Unnecessary textures
 
-##[Wintercraft-1.1.0] - 2014-11-29
+## [Wintercraft-1.1.0] - 2014-11-29
 ## Added
 - Albino Reindeer mob
 - Elf House structure
@@ -256,12 +256,12 @@ For MC 1.7.10 / 1.7.2
 - Seperate green candle block
 - Winter Ice generation
 
-##[Wintercraft-1.0.3] - 2013-12-18
+## [Wintercraft-1.0.3] - 2013-12-18
 
-##[Wintercraft-1.0.2] - 2013-12-08
+## [Wintercraft-1.0.2] - 2013-12-08
 
-##[Wintercraft-1.0.1] - 2013-12-04
+## [Wintercraft-1.0.1] - 2013-12-04
 
-##[Wintercraft-1.0.0] - 2013-12-03
+## [Wintercraft-1.0.0] - 2013-12-03
 
-(Wil add older versions later)
+(Wil update older versions later)
