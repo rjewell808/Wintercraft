@@ -1,5 +1,5 @@
 # Changelog
-[2.0.0](#wintercraft-200---UNRELEASED) / [1.1.4.2](#wintercraft-1142---2016-11-28) / [1.1.4.1](#wintercraft-1141---2016-11-23) / [1.1.4](#wintercraft-114---2016-11-23)
+[2.0.0](#wintercraft-200---unreleased) / [1.1.4.2](#wintercraft-1142---2016-11-28) / [1.1.4.1](#wintercraft-1141---2016-11-23) / [1.1.4](#wintercraft-114---2016-11-23) / [1.1.3](#wintercraft-113---2015-08-31) / [1.1.2](#wintercraft-112---2014-12-21) / [1.1.1](#wintercraft-111---2014-12-13) / [1.1.0](#wintercraft-110---2014-11-29) / [1.0.3](#wintercraft-103---2013-12-18) / [1.0.2](#wintercraft-102---2013-12-08) / [1.0.1](#wintercraft-101---2013-12-04) / [1.0.0](#wintercraft-100---2013-12-03)
 
 ## [Wintercraft-2.0.0] - UNRELEASED
 For MC 1.12.2
