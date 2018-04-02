@@ -1,29 +1,1 @@
-{
-    "rip": {"category": "master","sounds": ["block/rip1","block/rip2","block/rip3"]},
-    "snowGlobe": {"category": "master","sounds": ["misc/snowGlobe"]},
-    "star": {"category": "master","sounds": ["misc/star"]},
-    "jingleBells": {"category": "master","sounds": [{"name": "records/jingleBells","stream": true}]},
-    "deckTheHalls": {"category": "master","sounds": [{"name": "records/deckTheHalls","stream": true}]},
-    "golemSay": {"category": "master","sounds": ["mob/miniGolem/golemSay1","mob/miniGolem/golemSay2","mob/miniGolem/golemSay3"]},
-    "golemStep": {"category": "master","sounds": ["mob/miniGolem/golemStep1","mob/miniGolem/golemStep2","mob/miniGolem/golemStep3"]},
-    "golemHurt": {"category": "master","sounds": ["mob/miniGolem/golemHurt1","mob/miniGolem/golemHurt2","mob/miniGolem/golemHurt3"]},
-    "golemDeath": {"category": "master","sounds": [{"name": "mob/miniGolem/golemDeath","stream": false}]},
-    "gingerBreadHit": {"category": "master","sounds": ["mob/gingerbreadMan/gingerBreadHit1","mob/gingerbreadMan/gingerBreadHit2","mob/gingerbreadMan/gingerBreadHit3"]},
-    "gingerBreadDeath": {"category": "master","sounds": [{"name": "mob/gingerbreadMan/gingerbreadDeath","stream": false}]},
-    "penguinSay": {"category": "master","sounds": ["mob/penguin/penguinSay1","mob/penguin/penguinSay2","mob/penguin/penguinSay3"]},
-    "penguinHurt": {"category": "master","sounds": [{"name": "mob/penguin/penguinHurt","stream": false}]},
-    "penguinDeath": {"category": "master","sounds": [{"name": "mob/penguin/penguinDeath","stream": false}]},
-    "bearSay": {"category": "master","sounds": ["mob/polarBear/bearSay1","mob/polarBear/bearSay2","mob/polarBear/bearSay3"]},
-    "bearHurt": {"category": "master","sounds": ["mob/polarBear/bearHurt1","mob/polarBear/bearHurt2","mob/polarBear/bearHurt3"]},
-    "bearDeath": {"category": "master","sounds": [{"name": "mob/polarBear/bearDeath","stream": false}]},
-    "reindeerSay": {"category": "master","sounds": ["mob/reindeer/reindeerSay1","mob/reindeer/reindeerSay2"]},
-    "reindeerHurt": {"category": "master","sounds": ["mob/reindeer/reindeerHurt1","mob/reindeer/reindeerHurt2"]},
-    "reindeerDeath": {"category": "master","sounds": [{"name": "mob/reindeer/reindeerDeath","stream": false}]},
-    "albinoReindeerSay": {"category": "master","sounds": ["mob/albinoReindeer/albinoReindeerSay1","mob/albinoReindeer/albinoReindeerSay2"]},
-    "albinoReindeerHurt": {"category": "master","sounds": ["mob/albinoReindeer/albinoReindeerHurt1","mob/albinoReindeer/albinoReindeerHurt2"]},
-    "albinoReindeerDeath": {"category": "master","sounds": [{"name": "mob/albinoReindeer/albinoReindeerDeath","stream": false}]},
-    "calendar": {"category": "master","sounds": ["block/calendar1","block/calendar2"]},
-	"snowGlobeTap": {"category": "master","sounds": ["block/snowGlobeTap"]},
-	"santa": {"category": "master","sounds": ["misc/santa"]}
-	
-}
+{	"rip": {		"category": "block",		"subtitle": "wc.subtitle.rip",		"sounds": [ "wc:block/rip1" , "wc:block/rip2" , "wc:block/rip3" ]	}}

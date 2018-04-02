@@ -7,6 +7,7 @@ import gruntpie224.wintercraft.blocks.BlockBasic;
 import gruntpie224.wintercraft.blocks.BlockCandle;
 import gruntpie224.wintercraft.blocks.BlockFreezer;
 import gruntpie224.wintercraft.blocks.BlockFruitCake;
+import gruntpie224.wintercraft.blocks.BlockGift;
 import gruntpie224.wintercraft.blocks.BlockOrnament;
 import gruntpie224.wintercraft.blocks.BlockOrnamentRare;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabDouble;
@@ -74,6 +75,9 @@ public class WinterBlocks {
 	@GameRegistry.ObjectHolder("wc:ornament_rare")
 	public static Block ornament_rare;
 	
+	@GameRegistry.ObjectHolder("wc:gift")
+	public static Block gift;
+	
 	public static void initBlocks()
 	{
 		iced_cobble = new BlockBasic("iced_cobble", Material.ROCK, SoundType.STONE).setHardness(2.0f).setResistance(10.0F);
@@ -112,6 +116,9 @@ public class WinterBlocks {
 		ornament = new BlockOrnament("ornament").setHardness(0.3f);
 		
 		ornament_rare = new BlockOrnamentRare("ornament_rare").setHardness(0.3f);
+		
+		gift = new BlockGift("gift", Material.CLOTH).setHardness(0.2F);
+		all_blocks.add(gift);
 	}
 	
 	public static void registerBlocks(RegistryEvent.Register<Block> event)

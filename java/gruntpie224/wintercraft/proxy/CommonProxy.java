@@ -5,10 +5,12 @@ import java.io.File;
 import gruntpie224.wintercraft.Wintercraft;
 import gruntpie224.wintercraft.WintercraftReference;
 import gruntpie224.wintercraft.helper.Config;
+import gruntpie224.wintercraft.helper.WCSounds;
 import gruntpie224.wintercraft.helper.gui.GuiProxy;
 import gruntpie224.wintercraft.init.WinterBlocks;
 import gruntpie224.wintercraft.init.WinterItems;
 import gruntpie224.wintercraft.tileentity.TileEntityFreezer;
+import gruntpie224.wintercraft.tileentity.TileEntityGift;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
@@ -32,6 +34,8 @@ public class CommonProxy {
 		File directory = event.getModConfigurationDirectory();
 		config = new Configuration(new File(directory.getPath(), "wintercraft.cfg"));
 		Config.readConfig();
+		
+		WCSounds.initSounds();
 	}
 	
 	public void init(FMLInitializationEvent event){
@@ -52,6 +56,7 @@ public class CommonProxy {
 		WinterBlocks.registerBlocks(event);
 		
 		GameRegistry.registerTileEntity(TileEntityFreezer.class, WintercraftReference.MOD_ID + "_freezer");
+		GameRegistry.registerTileEntity(TileEntityGift.class, WintercraftReference.MOD_ID + "_gift");
 	}
 	
 	@SubscribeEvent
