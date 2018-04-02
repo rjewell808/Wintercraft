@@ -12,6 +12,7 @@ import gruntpie224.wintercraft.init.WinterItems;
 import gruntpie224.wintercraft.tileentity.TileEntityFreezer;
 import gruntpie224.wintercraft.tileentity.TileEntityGift;
 import net.minecraft.block.Block;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.RegistryEvent;
@@ -65,5 +66,10 @@ public class CommonProxy {
 		WinterItems.initItems();
 		WinterItems.registerItems(event);
 		WinterBlocks.registerBlockItems(event);
+	}
+	
+	public ModelBiped getArmorModel(int id)
+	{
+		return null;
 	}
 }

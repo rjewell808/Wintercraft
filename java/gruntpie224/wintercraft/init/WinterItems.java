@@ -2,14 +2,19 @@ package gruntpie224.wintercraft.init;
 
 import java.util.ArrayList;
 
+import gruntpie224.wintercraft.items.ArmorAntlers;
 import gruntpie224.wintercraft.items.ItemBasic;
 import gruntpie224.wintercraft.items.ItemCandle;
 import gruntpie224.wintercraft.items.ItemFruitCake;
 import gruntpie224.wintercraft.items.ItemOrnamentRare;
 import gruntpie224.wintercraft.items.ItemWinterFood;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -69,6 +74,11 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:choc_milk")
 	public static Item choc_milk;
 	
+	@GameRegistry.ObjectHolder("wc:antlers")
+	public static Item antlers;
+	
+	public static ArmorMaterial armorSkates = EnumHelper.addArmorMaterial("SKATES", "skates", 10, new int[]{2, 4, 2, 1}, 3, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
+	
 	public static void initItems()
 	{
 		ice_shard = new ItemBasic("ice_shard");
@@ -118,6 +128,9 @@ public class WinterItems {
 		
 		choc_milk = new ItemWinterFood("choc_milk", 8, 0.8F, false, true, "\u00a77\u00a7oWarm it up for a tastier drink!");
 		all_items.add(choc_milk);
+		
+		antlers = new ArmorAntlers("antlers", armorSkates, 0, EntityEquipmentSlot.HEAD);
+		all_items.add(antlers);
 	}
 	
 	@SideOnly(Side.CLIENT)
