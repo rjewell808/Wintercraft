@@ -18,6 +18,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -62,6 +63,22 @@ public class BlockFreezer extends BlockContainer implements ITileEntityProvider{
 		
 		worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
 
+    }
+	
+	@SideOnly(Side.CLIENT)
+    public BlockRenderLayer getBlockLayer()
+    {
+        return BlockRenderLayer.TRANSLUCENT;
+    }
+	
+	public boolean isFullCube(IBlockState state)
+    {
+        return false;
+    }
+	
+	public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
     }
 	
 	public static EnumFacing getFacingFromEntity(BlockPos clickedBlock, EntityLivingBase entity) {

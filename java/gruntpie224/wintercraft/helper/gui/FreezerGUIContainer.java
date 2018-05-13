@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class FreezerGUIContainer extends GuiContainer
 {
-	private ResourceLocation tif = new ResourceLocation(WintercraftReference.MOD_ID + ":" + "textures/gui/freezerGUI.png");
+	private ResourceLocation tif = new ResourceLocation(WintercraftReference.MOD_ID + ":" + "textures/gui/freezer_gui.png");
 	/** The player inventory bound to this GUI. */
     private final InventoryPlayer playerInventory;
 	private TileEntityFreezer tileFreezer;
