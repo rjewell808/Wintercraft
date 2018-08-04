@@ -77,6 +77,9 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:antlers")
 	public static Item antlers;
 	
+	@GameRegistry.ObjectHolder("wc:waffle_cone")
+	public static Item waffle_cone;
+	
 	public static ArmorMaterial armorSkates = EnumHelper.addArmorMaterial("SKATES", "skates", 10, new int[]{2, 4, 2, 1}, 3, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 	
 	public static void initItems()
@@ -89,6 +92,9 @@ public class WinterItems {
 		
 		empty_mug = new ItemBasic("empty_mug");
 		all_items.add(empty_mug);
+		
+		waffle_cone = new ItemBasic("icecream_cone");
+		all_items.add(waffle_cone);
 		
 		polarbear_fur = new ItemBasic("polarbear_fur");
 		all_items.add(polarbear_fur);
