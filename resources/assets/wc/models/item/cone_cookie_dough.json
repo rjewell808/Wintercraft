@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "wc:items/cone_vanilla"
+    "layer0": "wc:items/cone_cookie"
   }
 }
