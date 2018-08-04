@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = WintercraftReference.MOD_ID, name = WintercraftReference.MOD_NAME, version = WintercraftReference.VERSION, dependencies="required-after:forge@[14.23.2.2611,)", useMetadata=true)
+@Mod(modid = WintercraftReference.MOD_ID, name = WintercraftReference.MOD_NAME, version = WintercraftReference.VERSION, dependencies="required-after:forge@[14.23.2.2705,)", useMetadata=true)
 
 public class Wintercraft {
 	@SidedProxy(clientSide = WintercraftReference.CLIENT_PROXY, serverSide = WintercraftReference.SERVER_PROXY)
