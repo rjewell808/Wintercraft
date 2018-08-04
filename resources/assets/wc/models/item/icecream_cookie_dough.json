@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "wc:items/icecream_chocolate"
+    "layer0": "wc:items/icecream_cookie"
   }
 }

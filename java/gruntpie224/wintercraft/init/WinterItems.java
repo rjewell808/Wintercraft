@@ -79,6 +79,21 @@ public class WinterItems {
 	
 	@GameRegistry.ObjectHolder("wc:waffle_cone")
 	public static Item waffle_cone;
+
+	@GameRegistry.ObjectHolder("wc:icecream_vanilla")
+	public static Item icecream_vanilla;
+	
+	@GameRegistry.ObjectHolder("wc:icecream_chocolate")
+	public static Item icecream_chocolate;
+	
+	@GameRegistry.ObjectHolder("wc:icecream_strawberry")
+	public static Item icecream_strawberry;
+	
+	@GameRegistry.ObjectHolder("wc:icecream_cookie_dough")
+	public static Item icecream_cookie_dough;
+	
+	@GameRegistry.ObjectHolder("wc:icecream_magma_cream")
+	public static Item icecream_magma_cream;
 	
 	public static ArmorMaterial armorSkates = EnumHelper.addArmorMaterial("SKATES", "skates", 10, new int[]{2, 4, 2, 1}, 3, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 	
@@ -137,6 +152,21 @@ public class WinterItems {
 		
 		antlers = new ArmorAntlers("antlers", armorSkates, 0, EntityEquipmentSlot.HEAD);
 		all_items.add(antlers);
+		
+		icecream_vanilla = new ItemBasic("icecream_vanilla");
+		all_items.add(icecream_vanilla);
+		
+		icecream_chocolate = new ItemBasic("icecream_chocolate");
+		all_items.add(icecream_chocolate);
+		
+		icecream_strawberry = new ItemBasic("icecream_strawberry");
+		all_items.add(icecream_strawberry);
+		
+		icecream_cookie_dough = new ItemBasic("icecream_cookie_dough");
+		all_items.add(icecream_cookie_dough);
+		
+		icecream_magma_cream = new ItemBasic("icecream_magma_cream");
+		all_items.add(icecream_magma_cream);
 	}
 	
 	@SideOnly(Side.CLIENT)
