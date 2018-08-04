@@ -3,7 +3,8 @@ V.2.0.0
 *Updated - 1.12.2
 *Change - Increased Candle brightness
 *Change - Candle textures are based on Concrete Powder colors 
-*Change - Candle particles altered 
+*Change - Candle particles altered
+*Change - Icecream potion effects tweaked
 *Change - Increased Fruit Cake strength potion duration
 *Change - Increased Ice Shard drop chance from Ice
 *Change - Ice Shards/Ice Chunks can be used as fuel in Freezer

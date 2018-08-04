@@ -9,8 +9,11 @@ import gruntpie224.wintercraft.init.WinterItems;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 public class ItemWinterFood extends ItemFood{
@@ -18,6 +21,7 @@ public class ItemWinterFood extends ItemFood{
 	private int food_amount;
 	private boolean is_drink;
 	private String extra_info;
+	private PotionEffect potion;
 	
 	public ItemWinterFood(String name, int amount, float saturation, boolean isWolfFood) {
 		super(amount, saturation, isWolfFood);
@@ -48,6 +52,12 @@ public class ItemWinterFood extends ItemFood{
 		this.extra_info = info;
 	}
 	
+	public Item setPotion(int potionID, int seconds, int level) {
+		this.potion = new PotionEffect(Potion.getPotionById(potionID), 20 * seconds, level);
+		
+		return this;
+	}
+	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
@@ -69,5 +79,8 @@ public class ItemWinterFood extends ItemFood{
     {
         if(is_drink)
         	par3EntityPlayer.inventory.addItemStackToInventory(new ItemStack(WinterItems.empty_mug));
+        
+        if(potion != null)
+			par3EntityPlayer.addPotionEffect(potion); 
     }
 }
