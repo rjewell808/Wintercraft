@@ -6,13 +6,17 @@ import gruntpie224.wintercraft.items.ArmorAntlers;
 import gruntpie224.wintercraft.items.ItemBasic;
 import gruntpie224.wintercraft.items.ItemCandle;
 import gruntpie224.wintercraft.items.ItemFruitCake;
+import gruntpie224.wintercraft.items.ItemIcecream;
 import gruntpie224.wintercraft.items.ItemOrnamentRare;
 import gruntpie224.wintercraft.items.ItemWinterFood;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionType;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
@@ -95,6 +99,21 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:icecream_magma_cream")
 	public static Item icecream_magma_cream;
 	
+	@GameRegistry.ObjectHolder("wc:cone_vanilla")
+	public static Item cone_vanilla;
+	
+	@GameRegistry.ObjectHolder("wc:cone_chocolate")
+	public static Item cone_chocolate;
+	
+	@GameRegistry.ObjectHolder("wc:cone_strawberry")
+	public static Item cone_strawberry;
+	
+	@GameRegistry.ObjectHolder("wc:cone_cookie_dough")
+	public static Item cone_cookie_dough;
+	
+	@GameRegistry.ObjectHolder("wc:cone_magma_cream")
+	public static Item cone_magma_cream;
+	
 	public static ArmorMaterial armorSkates = EnumHelper.addArmorMaterial("SKATES", "skates", 10, new int[]{2, 4, 2, 1}, 3, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 	
 	public static void initItems()
@@ -167,6 +186,21 @@ public class WinterItems {
 		
 		icecream_magma_cream = new ItemBasic("icecream_magma_cream");
 		all_items.add(icecream_magma_cream);
+		
+		cone_vanilla = new ItemIcecream("cone_vanilla", 6, 1.0F, -1, "");
+		all_items.add(cone_vanilla);
+		
+		cone_chocolate = new ItemIcecream("cone_chocolate", 6, 1.0F, 5, "\\u00a7c Gives a Strength Boost");
+		all_items.add(cone_chocolate);
+		
+		cone_strawberry = new ItemIcecream("cone_strawberry", 6, 1.0F, 10, "\\u00a7c Gives Health Regen");
+		all_items.add(cone_strawberry);
+		
+		cone_cookie_dough = new ItemIcecream("cone_cookie_dough", 6, 1.0F, 1, "\\u00a7c Gives a Speed Boost");
+		all_items.add(cone_cookie_dough);
+		
+		cone_magma_cream = new ItemIcecream("cone_magma_cream", 6, 1.0F, 12, "\\u00a7c Gives Fire Resistance");
+		all_items.add(cone_magma_cream);
 	}
 	
 	@SideOnly(Side.CLIENT)
