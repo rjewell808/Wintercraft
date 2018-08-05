@@ -2,10 +2,12 @@ package gruntpie224.wintercraft.init;
 
 import java.util.ArrayList;
 
+import gruntpie224.wintercraft.helper.WCSounds;
 import gruntpie224.wintercraft.items.ArmorAntlers;
 import gruntpie224.wintercraft.items.ArmorSanta;
 import gruntpie224.wintercraft.items.ItemBasic;
 import gruntpie224.wintercraft.items.ItemCandle;
+import gruntpie224.wintercraft.items.ItemChristmasDisk;
 import gruntpie224.wintercraft.items.ItemFruitCake;
 import gruntpie224.wintercraft.items.ItemOrnamentRare;
 import gruntpie224.wintercraft.items.ItemWinterFood;
@@ -126,6 +128,12 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:santa_boots")
 	public static Item santa_boots;
 	
+	@GameRegistry.ObjectHolder("wc:music_disk_jingle")
+	public static Item music_disk_jingle;
+	
+	@GameRegistry.ObjectHolder("wc:music_disk_halls")
+	public static Item music_disk_halls;
+	
 	public static ArmorMaterial armorSkates = EnumHelper.addArmorMaterial("SKATES", "skates", 10, new int[]{2, 4, 2, 1}, 3, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 	public static ArmorMaterial armorSanta = EnumHelper.addArmorMaterial("SANTA", "santa", 7, new int[]{1, 4, 2, 1}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 	
@@ -199,6 +207,9 @@ public class WinterItems {
 		
 		santa_boots = new ArmorSanta("santa_boots", armorSanta, 0, EntityEquipmentSlot.FEET);
 		all_items.add(santa_boots);
+		
+		music_disk_jingle = new ItemChristmasDisk("music_disk_jingle", WCSounds.snd_disk_jingle);
+		all_items.add(music_disk_jingle);
 		
 		icecream_vanilla = new ItemBasic("icecream_vanilla");
 		all_items.add(icecream_vanilla);
