@@ -11,6 +11,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
@@ -50,19 +51,18 @@ public class EntityGingerbread extends EntityMob {
 		return true;
 	}
 	
-	private void applyEntityAI() {
-		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-//        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityElf.class, false));
-	}
-	
 	@Override
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(6, new EntityAIWander(this, 0.4D));
-        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.tasks.addTask(7, new EntityAILookIdle(this));
-        this.applyEntityAI();
+        this.tasks.addTask(2, new EntityAIAttackMelee(this, 0.5D, false));
+        this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 0.4D));
+        this.tasks.addTask(7, new EntityAIWander(this, 0.4D));
+        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.tasks.addTask(8, new EntityAILookIdle(this));
+        
+        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+//        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityElf.class, false));
 	}
 
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn)
