@@ -4,6 +4,7 @@ import java.io.File;
 
 import gruntpie224.wintercraft.Wintercraft;
 import gruntpie224.wintercraft.WintercraftReference;
+import gruntpie224.wintercraft.entity.EntityBase;
 import gruntpie224.wintercraft.helper.Config;
 import gruntpie224.wintercraft.helper.WCSounds;
 import gruntpie224.wintercraft.helper.gui.GuiProxy;
@@ -37,6 +38,7 @@ public class CommonProxy {
 		Config.readConfig();
 		
 		WCSounds.initSounds();
+		EntityBase.Init();
 	}
 	
 	public void init(FMLInitializationEvent event){

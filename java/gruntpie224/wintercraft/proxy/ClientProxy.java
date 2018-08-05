@@ -1,5 +1,6 @@
 package gruntpie224.wintercraft.proxy;
 
+import gruntpie224.wintercraft.entity.EntityBase;
 import gruntpie224.wintercraft.init.WinterBlocks;
 import gruntpie224.wintercraft.init.WinterItems;
 import gruntpie224.wintercraft.render.models.ModelAntlers;
@@ -20,6 +21,7 @@ public class ClientProxy extends CommonProxy{
 	@Override
 	public void preInit(FMLPreInitializationEvent event){
 		super.preInit(event);
+		EntityBase.initModels();
 	}
 	
 	@Override
