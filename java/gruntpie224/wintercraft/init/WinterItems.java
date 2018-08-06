@@ -7,6 +7,8 @@ import gruntpie224.wintercraft.items.ArmorAntlers;
 import gruntpie224.wintercraft.items.ArmorSanta;
 import gruntpie224.wintercraft.items.ItemBasic;
 import gruntpie224.wintercraft.items.ItemCandle;
+import gruntpie224.wintercraft.items.ItemCandyCaneAxe;
+import gruntpie224.wintercraft.items.ItemCandyCaneSword;
 import gruntpie224.wintercraft.items.ItemChristmasDisk;
 import gruntpie224.wintercraft.items.ItemFruitCake;
 import gruntpie224.wintercraft.items.ItemOrnamentRare;
@@ -15,6 +17,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
@@ -134,6 +137,14 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:music_disk_halls")
 	public static Item music_disk_halls;
 	
+	@GameRegistry.ObjectHolder("wc:candy_cane_sword")
+	public static Item candy_cane_sword;
+	
+	@GameRegistry.ObjectHolder("wc:candy_cane_axe")
+	public static Item candy_cane_axe;
+	
+	public static ToolMaterial toolCandyCane = EnumHelper.addToolMaterial("CANDYCANE", 1, 250, 6.0F, 3F, 15);
+	
 	public static ArmorMaterial armorSkates = EnumHelper.addArmorMaterial("SKATES", "skates", 10, new int[]{2, 4, 2, 1}, 3, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 	public static ArmorMaterial armorSanta = EnumHelper.addArmorMaterial("SANTA", "santa", 7, new int[]{1, 4, 2, 1}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 	
@@ -213,6 +224,12 @@ public class WinterItems {
 		
 		music_disk_halls = new ItemChristmasDisk("music_disk_halls", WCSounds.snd_disk_halls);
 		all_items.add(music_disk_halls);
+		
+		candy_cane_sword = new ItemCandyCaneSword("candy_cane_sword", toolCandyCane);
+		all_items.add(candy_cane_sword);
+		
+		candy_cane_axe = new ItemCandyCaneAxe("candy_cane_axe", toolCandyCane);
+		all_items.add(candy_cane_axe);
 		
 		icecream_vanilla = new ItemBasic("icecream_vanilla");
 		all_items.add(icecream_vanilla);
