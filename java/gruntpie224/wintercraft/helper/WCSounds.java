@@ -21,5 +21,6 @@ public class WCSounds {
 		snd_gingerbread_hit = new SoundEvent(new ResourceLocation("wc", "gingerbread_hurt"));
 		
 		snd_disk_jingle = new SoundEvent(new ResourceLocation("wc", "disk_jingle"));
+		snd_disk_halls = new SoundEvent(new ResourceLocation("wc", "disk_halls"));
 	}
 }	

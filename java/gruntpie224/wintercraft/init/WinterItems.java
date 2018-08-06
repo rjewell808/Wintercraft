@@ -211,6 +211,9 @@ public class WinterItems {
 		music_disk_jingle = new ItemChristmasDisk("music_disk_jingle", WCSounds.snd_disk_jingle);
 		all_items.add(music_disk_jingle);
 		
+		music_disk_halls = new ItemChristmasDisk("music_disk_halls", WCSounds.snd_disk_halls);
+		all_items.add(music_disk_halls);
+		
 		icecream_vanilla = new ItemBasic("icecream_vanilla");
 		all_items.add(icecream_vanilla);
 		
