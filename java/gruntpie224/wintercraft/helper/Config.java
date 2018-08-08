@@ -10,6 +10,8 @@ public class Config {
 	private static final String CATEGORY_GENERAL = "general";
 	
 	public static boolean isSnowEnabled = true;
+	public static boolean showSpawnCoords = false;
+	public static int candyCaneRarity;
 	
 	public static void readConfig()
 	{
@@ -32,5 +34,7 @@ public class Config {
 	{
 		cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General Configuration");
 		isSnowEnabled = cfg.getBoolean("snowEnabled", CATEGORY_GENERAL, isSnowEnabled, "Set to false to disable snow in all biomes");
+		showSpawnCoords = cfg.getBoolean("showSpawnCoords", CATEGORY_GENERAL, showSpawnCoords, "Set to true to enable coordinate output in the console");
+		candyCaneRarity = cfg.getInt("candyCaneRarity", CATEGORY_GENERAL, 7, 0, 100, "Giant Candy Cane structure spawn rarity");
 	}
 }

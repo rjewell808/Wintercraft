@@ -6,12 +6,14 @@ import gruntpie224.wintercraft.helper.WCSounds;
 import gruntpie224.wintercraft.items.ArmorAntlers;
 import gruntpie224.wintercraft.items.ArmorSanta;
 import gruntpie224.wintercraft.items.ItemBasic;
+import gruntpie224.wintercraft.items.ItemBasicSword;
 import gruntpie224.wintercraft.items.ItemCandle;
 import gruntpie224.wintercraft.items.ItemCandyCaneAxe;
 import gruntpie224.wintercraft.items.ItemCandyCaneSword;
 import gruntpie224.wintercraft.items.ItemChristmasDisk;
 import gruntpie224.wintercraft.items.ItemFruitCake;
 import gruntpie224.wintercraft.items.ItemOrnamentRare;
+import gruntpie224.wintercraft.items.ItemRockySnowball;
 import gruntpie224.wintercraft.items.ItemWinterFood;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.SoundEvents;
@@ -143,7 +145,14 @@ public class WinterItems {
 	@GameRegistry.ObjectHolder("wc:candy_cane_axe")
 	public static Item candy_cane_axe;
 	
+	@GameRegistry.ObjectHolder("wc:shard_sword")
+	public static Item shard_sword;
+	
+	@GameRegistry.ObjectHolder("wc:rocky_snowball")
+	public static Item rocky_snowball;
+	
 	public static ToolMaterial toolCandyCane = EnumHelper.addToolMaterial("CANDYCANE", 1, 250, 6.0F, 3F, 15);
+	public static ToolMaterial toolShard = EnumHelper.addToolMaterial("SHARD", 3, 850, 6.5F, 8F, 25);
 	
 	public static ArmorMaterial armorSkates = EnumHelper.addArmorMaterial("SKATES", "skates", 10, new int[]{2, 4, 2, 1}, 3, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 	public static ArmorMaterial armorSanta = EnumHelper.addArmorMaterial("SANTA", "santa", 7, new int[]{1, 4, 2, 1}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
@@ -230,6 +239,12 @@ public class WinterItems {
 		
 		candy_cane_axe = new ItemCandyCaneAxe("candy_cane_axe", toolCandyCane);
 		all_items.add(candy_cane_axe);
+		
+		shard_sword = new ItemBasicSword("shard_sword", toolShard, null);
+		all_items.add(shard_sword);
+		
+		rocky_snowball = new ItemRockySnowball("snowball_rock");
+		all_items.add(rocky_snowball);
 		
 		icecream_vanilla = new ItemBasic("icecream_vanilla");
 		all_items.add(icecream_vanilla);

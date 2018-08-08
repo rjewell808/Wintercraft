@@ -2,10 +2,10 @@ package gruntpie224.wintercraft.entity.monster;
 
 import java.util.Random;
 
-import gruntpie224.wintercraft.Wintercraft;
 import gruntpie224.wintercraft.WintercraftReference;
 import gruntpie224.wintercraft.helper.WCSounds;
 import gruntpie224.wintercraft.init.WinterItems;
+import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
@@ -17,22 +17,23 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class EntityGingerbread extends EntityMob {
-
+public class EntityMiniSnowGolem extends EntityMob {
 	private EntityPlayer player;
-	public static final ResourceLocation LOOT = new ResourceLocation(WintercraftReference.MOD_ID, "models/gingerbreadman");
+	public static final ResourceLocation LOOT = new ResourceLocation(WintercraftReference.MOD_ID, "models/minisnowgolem");
 	
-	public EntityGingerbread(World par1World) {
+	public EntityMiniSnowGolem(World par1World) {
 		super(par1World);
 		this.experienceValue = 5;
 	}
@@ -40,9 +41,9 @@ public class EntityGingerbread extends EntityMob {
 	protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(18.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(15.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(16.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(20.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
     }
 
 	
@@ -67,39 +68,56 @@ public class EntityGingerbread extends EntityMob {
 
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn)
     {
-	     return WCSounds.snd_gingerbread_hit;
+	     return WCSounds.snd_minisnowgolem_hurt;
     }
 
     protected SoundEvent getDeathSound()
     {
-        return WCSounds.snd_gingerbread_death;
+        return WCSounds.snd_minisnowgolem_death;
+    }
+    
+    protected SoundEvent getAmbientSound()
+    {
+    	return WCSounds.snd_minisnowgolem_say;
+    }
+    
+    protected void playStepSound(BlockPos pos, Block blockIn)
+    {
+        this.playSound(WCSounds.snd_minisnowgolem_step, 0.15F, 1.0F);
     }
     
     @Override
     protected Item getDropItem()
     {
-        Random rand = new Random();
-        
-        if(rand.nextInt(200) <= 3 && !world.isDaytime())
-        	return WinterItems.music_disk_halls;
-        
-    	return WinterItems.gingerbread_man;
+    	int randomItem = world.rand.nextInt(200);
+    	
+    	if(randomItem <= 3 && !world.isDaytime())
+    		return WinterItems.music_disk_jingle;
+    	
+    	if(randomItem <= 60)
+    		return Item.getItemFromBlock(Blocks.ICE);
+    	
+    	return WinterItems.ice_chunk;	
     }
     
     @Override
     protected void dropFewItems(boolean par1, int par2)
     {
-    	int j = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
-        int k;
-        
-        
-        this.dropItem(this.getDropItem(), 1);
-        if(this.rand.nextInt(3) > 1)
+        Item j = this.getDropItem();
+
+        if (j != null)
         {
-	        for (k = 0; k < j+1; ++k)
-	        {
-	        	this.entityDropItem(new ItemStack(Items.DYE, 1, 3), 1.0F);
-	        }
+            int k = this.rand.nextInt(3);
+
+            if (par2 > 0)
+            {
+                k += this.rand.nextInt(par2 + 1);
+            }
+
+            for (int l = 0; l < k; ++l)
+            {
+                this.dropItem(j, 1);
+            }
         }
     }
     

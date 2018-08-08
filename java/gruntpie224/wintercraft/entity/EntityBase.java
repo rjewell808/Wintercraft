@@ -2,7 +2,13 @@ package gruntpie224.wintercraft.entity;
 
 import gruntpie224.wintercraft.Wintercraft;
 import gruntpie224.wintercraft.entity.monster.EntityGingerbread;
+import gruntpie224.wintercraft.entity.monster.EntityMiniSnowGolem;
+import gruntpie224.wintercraft.entity.projectile.EntityRockySnowball;
+import gruntpie224.wintercraft.init.WinterItems;
 import gruntpie224.wintercraft.render.mobs.RenderGingerbread;
+import gruntpie224.wintercraft.render.mobs.RenderMiniSnowGolem;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.item.Item;
@@ -24,15 +30,14 @@ public class EntityBase {
 				
 				
 			EntityRegistry.registerModEntity(EntityGingerbread.LOOT, EntityGingerbread.class, "GingerbreadMan", id++, Wintercraft.instance, 64, 3, true, 0Xc67d2f, 0X723b00);
-			EntityRegistry.addSpawn(EntityGingerbread.class, 50, 1, 2, EnumCreatureType.MONSTER,Biomes.FOREST, Biomes.TAIGA,Biomes.COLD_TAIGA,Biomes.BIRCH_FOREST);
+			EntityRegistry.addSpawn(EntityGingerbread.class, 50, 1, 2, EnumCreatureType.MONSTER,Biomes.FOREST, Biomes.TAIGA, Biomes.COLD_TAIGA, Biomes.BIRCH_FOREST);
 			LootTableList.register(EntityGingerbread.LOOT);
 			
-			/*			
-			EntityRegistry.registerGlobalEntityID(EntityMiniSnowGolem.class, "WinterMiniSnowGolem", getUniqueEntityId());
-				EntityRegistry.findGlobalUniqueEntityId();
-				EntityRegistry.registerEgg(EntityMiniSnowGolem.class, 0Xeaf1f1, 0X82e2e5);
-				LanguageRegistry.instance().addStringLocalization("entity.WinterMiniSnowGolem.name", "Mini Snow Golem");
-						
+			EntityRegistry.registerModEntity(EntityMiniSnowGolem.LOOT, EntityMiniSnowGolem.class, "MiniSnowGolem", id++, Wintercraft.instance, 64, 3, true, 0Xeaf1f1, 0X82e2e5);
+			EntityRegistry.addSpawn(EntityMiniSnowGolem.class, 50, 1, 2, EnumCreatureType.MONSTER, Biomes.ICE_PLAINS, Biomes.FROZEN_OCEAN, Biomes.FROZEN_RIVER, Biomes.COLD_BEACH);
+			LootTableList.register(EntityMiniSnowGolem.LOOT);
+			
+			/*					
 			EntityRegistry.registerGlobalEntityID(EntityAlbinoReindeer.class, "WinterAlbinoReindeer", getUniqueEntityId());
 				EntityRegistry.findGlobalUniqueEntityId();
 				EntityRegistry.registerEgg(EntityAlbinoReindeer.class, 0XFF2B32, 0XEEE5FF);
@@ -91,6 +96,9 @@ public class EntityBase {
 	@SideOnly(Side.CLIENT)
 	public static void initModels() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityGingerbread.class, RenderGingerbread.FACTORY);
+		RenderingRegistry.registerEntityRenderingHandler(EntityMiniSnowGolem.class, RenderMiniSnowGolem.FACTORY);
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityRockySnowball.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), WinterItems.rocky_snowball, Minecraft.getMinecraft().getRenderItem()));
 	}
 
 }

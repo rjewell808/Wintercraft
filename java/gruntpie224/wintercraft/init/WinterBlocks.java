@@ -5,15 +5,18 @@ import java.util.ArrayList;
 import gruntpie224.wintercraft.WintercraftReference;
 import gruntpie224.wintercraft.blocks.BlockBasic;
 import gruntpie224.wintercraft.blocks.BlockCandle;
+import gruntpie224.wintercraft.blocks.BlockCandyCane;
 import gruntpie224.wintercraft.blocks.BlockFreezer;
 import gruntpie224.wintercraft.blocks.BlockFruitCake;
 import gruntpie224.wintercraft.blocks.BlockGift;
 import gruntpie224.wintercraft.blocks.BlockOrnament;
 import gruntpie224.wintercraft.blocks.BlockOrnamentRare;
+import gruntpie224.wintercraft.blocks.BlockPresent;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabDouble;
 import gruntpie224.wintercraft.blocks.BlockSnowSlabSingle;
 import gruntpie224.wintercraft.blocks.BlockSnowStairs;
 import gruntpie224.wintercraft.blocks.BlockStar;
+import gruntpie224.wintercraft.blocks.BlockWallBlock;
 import gruntpie224.wintercraft.items.ItemCandle;
 import gruntpie224.wintercraft.items.ItemOrnamentRare;
 import net.minecraft.block.Block;
@@ -78,6 +81,27 @@ public class WinterBlocks {
 	@GameRegistry.ObjectHolder("wc:gift")
 	public static Block gift;
 	
+	@GameRegistry.ObjectHolder("wc:wreath")
+	public static Block wreath;
+	
+	@GameRegistry.ObjectHolder("wc:stocking")
+	public static Block stocking;
+	
+	@GameRegistry.ObjectHolder("wc:stocking_full")
+	public static Block stocking_full;
+	
+	@GameRegistry.ObjectHolder("wc:candy_cane_block")
+	public static Block candy_cane_block;
+	
+	@GameRegistry.ObjectHolder("wc:present")
+	public static Block present;
+	
+	@GameRegistry.ObjectHolder("wc:winter_present")
+	public static Block winter_present;
+	
+	@GameRegistry.ObjectHolder("wc:dark_present")
+	public static Block dark_present;
+	
 	public static void initBlocks()
 	{
 		iced_cobble = new BlockBasic("iced_cobble", Material.ROCK, SoundType.STONE).setHardness(2.0f).setResistance(10.0F);
@@ -119,6 +143,27 @@ public class WinterBlocks {
 		
 		gift = new BlockGift("gift", Material.CLOTH).setHardness(0.2F);
 		all_blocks.add(gift);
+		
+		wreath = new BlockWallBlock("wreath", SoundType.PLANT).setHardness(0.3F);
+		all_blocks.add(wreath);
+		
+		stocking = new BlockWallBlock("stocking", SoundType.CLOTH).setHardness(0.2F);
+		all_blocks.add(stocking);
+		
+		stocking_full = new BlockWallBlock("stocking_full", SoundType.CLOTH).setHardness(0.2F);
+		all_blocks.add(stocking_full);
+		
+		candy_cane_block = new BlockCandyCane("candy_cane_block", Material.WOOD).setHardness(1.5F);
+		all_blocks.add(candy_cane_block);
+		
+		present = new BlockPresent("present", Material.CLOTH).setHardness(0.2F);
+		all_blocks.add(present);
+		
+		winter_present = new BlockPresent("winter_present", Material.CLOTH).setHardness(0.2F);
+		all_blocks.add(winter_present);
+		
+		dark_present = new BlockPresent("dark_present", Material.CLOTH).setHardness(0.3F);
+		all_blocks.add(dark_present);
 	}
 	
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
