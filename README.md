@@ -4,7 +4,7 @@ A Minecraft mod centered around adding Christmas/Winter into the game.
 Visit here for more information: http://www.gpmods.net/mods/wintercraft/
 
 ## Port to 1.12.2 Progress:
-- [ ] Blocks: 46%
+- [ ] Blocks: 57%
 - [ ] Items: 80%
 - [ ] Mobs: 22%
 - [ ] World Gen: 25%
