@@ -23,6 +23,12 @@ public class FreezerGUIContainer extends GuiContainer
 		this.playerInventory = playerInv;
 	}
 	
+	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+        this.drawDefaultBackground();
+        super.drawScreen(mouseX, mouseY, partialTicks);
+        this.renderHoveredToolTip(mouseX, mouseY);
+    }
+	
 	/**
      * Draw the foreground layer for the GuiContainer (everythin in front of the items)
      */
